@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CalenderComponent } from './calender/calender.component';
+import { VisaManagerComponent } from './visa-manager/visa-manager.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CalenderComponent } from './calender/calender.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    CalenderComponent
+    CalenderComponent,
+    VisaManagerComponent
   ],
   imports: [
     BrowserModule,
