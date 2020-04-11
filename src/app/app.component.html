@@ -32,8 +32,10 @@
         <a mat-list-item [routerLink]="'/create-activity'"> Create Activity </a>
         <a mat-list-item (click)="toggleCollapsed()"> Student Manager </a>
         <div *ngIf="!iscollapsed">
-          <a mat-list-item > Add Student </a>
-          <a mat-list-item > View Student </a>
+          <a mat-list-item [routerLink]="'/student'"> Add Student </a>
+          <a mat-list-item [routerLink]="'/viewStudent'"> View Student </a>
+          <a mat-list-item [routerLink]="'/studentTracher'"> Student Tracker</a>
+          <a mat-list-item [routerLink]="'/studentDashboard'"> View Dashboard </a>
         </div>
         <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 
