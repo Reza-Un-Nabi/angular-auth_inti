@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CalenderComponent } from './calender/calender.component';
 import { VisaManagerComponent } from './visa-manager/visa-manager.component';
+
+import {StudentComponent} from './student/student/student.component';
 import { AddStudentComponent } from './student/add-student/add-student.component';
 import { ViewStudentComponent } from './student/view-student/view-student.component';
 import { StudentTrackerComponent } from './student/student-tracker/student-tracker.component';
@@ -18,7 +20,6 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { AcademicComponent } from './student/academic/academic.component';
 import { LanguageComponent } from './student/language/language.component';
 import { PassportComponent } from './student/passport/passport.component';
-import { StudentComponent } from './student/student/student.component';
 
 
 @NgModule({
@@ -28,14 +29,14 @@ import { StudentComponent } from './student/student/student.component';
     DashboardComponent,
     CalenderComponent,
     VisaManagerComponent,
+    StudentComponent,
     AddStudentComponent,
     ViewStudentComponent,
     StudentTrackerComponent,
     StudentDashboardComponent,
     AcademicComponent,
     LanguageComponent,
-    PassportComponent,
-    StudentComponent
+    PassportComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +59,7 @@ import { StudentComponent } from './student/student/student.component';
     MatListModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
