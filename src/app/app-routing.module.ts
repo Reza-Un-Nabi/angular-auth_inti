@@ -12,7 +12,9 @@ import {StudentDashboardComponent} from './student/student-dashboard/student-das
 import {AcademicComponent} from './student/academic/academic.component';
 import {LanguageComponent} from './student/language/language.component';
 import {PassportComponent} from './student/passport/passport.component';
-
+import {StudentTrackerStudentsComponent} from './student/student-tracker-students/student-tracker-students.component';
+import {StudentTrackerFollowupComponent} from './student/student-tracker-followup/student-tracker-followup.component';
+import {StudentTrackerDropplanComponent} from './student/student-tracker-dropplan/student-tracker-dropplan.component';
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'dashboard',component:DashboardComponent},
@@ -27,7 +29,12 @@ const routes: Routes = [
     {path: '**', redirectTo: 'addStudent'} 
   ]},
   { path:'viewStudent',component:ViewStudentComponent},
-  { path:'studentTracher',component:StudentTrackerComponent},
+  { path:'studentTracher',component:StudentTrackerComponent,children:[
+    {path:'trackStudents',component:StudentTrackerStudentsComponent},
+    {path:'followupStudent',component:StudentTrackerFollowupComponent},
+    {path:'dropplanStudent',component:StudentTrackerDropplanComponent},
+    {path:'**',redirectTo:'trackStudents'}
+  ]},
   { path:'studentDashboard',component:StudentDashboardComponent}
   /* { path:'dashboard',component:DashboardComponent,children: [
 

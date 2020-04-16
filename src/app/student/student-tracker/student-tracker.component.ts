@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-student-tracker',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentTrackerComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  navLinks: any[];
+  activeLinkIndex = 1; 
+  constructor(private router: Router) {
+    this.navLinks = [
+        {
+            label: 'Students',
+            link: './trackStudents',
+            index: 0
+        }, {
+            label: 'Follow Up',
+            link: './followupStudent',
+            index: 1
+        }, {
+            label: 'Drop Plan',
+            link: './dropplanStudent',
+            index: 2
+        }, 
+        
+    ]; 
   }
+    ngOnInit(): void {
+      this.router.events.subscribe((res) => {
+          this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
+      });
+    }
+
 
 }

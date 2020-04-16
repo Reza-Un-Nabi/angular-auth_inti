@@ -3,7 +3,11 @@ import { NgModule } from '@angular/core';
 import {  FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule,MatMenuModule,MatTabsModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule,MatInputModule ,MatListModule, MatButtonModule,MatMenuModule,MatTabsModule } from  '@angular/material';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +24,25 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { AcademicComponent } from './student/academic/academic.component';
 import { LanguageComponent } from './student/language/language.component';
 import { PassportComponent } from './student/passport/passport.component';
+import { StudentTrackerStudentsComponent } from './student/student-tracker-students/student-tracker-students.component';
+import { StudentTrackerFollowupComponent } from './student/student-tracker-followup/student-tracker-followup.component';
+import { StudentTrackerDropplanComponent } from './student/student-tracker-dropplan/student-tracker-dropplan.component';
 
+const matModules = [
+  MatToolbarModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatInputModule,
+    MatListModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatCheckboxModule
+    
+];
 
 @NgModule({
   declarations: [
@@ -36,7 +58,10 @@ import { PassportComponent } from './student/passport/passport.component';
     StudentDashboardComponent,
     AcademicComponent,
     LanguageComponent,
-    PassportComponent
+    PassportComponent,
+    StudentTrackerStudentsComponent,
+    StudentTrackerFollowupComponent,
+    StudentTrackerDropplanComponent
   ],
   imports: [
     BrowserModule,
@@ -45,21 +70,12 @@ import { PassportComponent } from './student/passport/passport.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatTabsModule
+    matModules
+   
   ],
   exports:[
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTabsModule 
+    matModules
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
