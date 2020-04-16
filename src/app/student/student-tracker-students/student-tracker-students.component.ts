@@ -1,8 +1,8 @@
 import {SelectionModel} from '@angular/cdk/collections';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field'
 
 
@@ -16,8 +16,9 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 
 export class StudentTrackerStudentsComponent implements OnInit {
 
-  displayedColumns: string[] = ['entrydate', 'name', 'EmailMobileNo', 'Country','CourseIntake','SourceStatus','IDPassword','User','Comment'];
+  displayedColumns: string[] = ['select','entrydate', 'name', 'EmailMobileNo', 'Country','CourseIntake','SourceStatus','IDPassword','User','Comment'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  selection = new SelectionModel<PeriodicElement>(true, []);
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -34,7 +35,27 @@ export class StudentTrackerStudentsComponent implements OnInit {
   }
 
   
-  
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: PeriodicElement): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.entrydate + 1}`;
+  }
 }
 
 export interface PeriodicElement {
