@@ -20,6 +20,7 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
 import { AcademicComponent } from './student/academic/academic.component';
 import { LanguageComponent } from './student/language/language.component';
 import { PassportComponent } from './student/passport/passport.component';
+import { AddleadComponent } from './leads/addlead/addlead.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { PassportComponent } from './student/passport/passport.component';
     StudentDashboardComponent,
     AcademicComponent,
     LanguageComponent,
-    PassportComponent
+    PassportComponent,
+    AddleadComponent
   ],
   imports: [
     BrowserModule,
