@@ -29,7 +29,7 @@ export class StudentComponent implements OnInit {
         {
           label: 'Passport',
           link: './passport',
-          index: 2
+          index: 3
       }, 
     ]; 
   }
