@@ -15,18 +15,24 @@ import {PassportComponent} from './student/passport/passport.component';
 import {StudentTrackerStudentsComponent} from './student/student-tracker-students/student-tracker-students.component';
 import {StudentTrackerFollowupComponent} from './student/student-tracker-followup/student-tracker-followup.component';
 import {StudentTrackerDropplanComponent} from './student/student-tracker-dropplan/student-tracker-dropplan.component';
+
+import { AddleadComponent } from './leads/addlead/addlead.component';
+import { LeadViewComponent } from './leads/lead-view/lead-view.component';
+import { LeadViewLeadsComponent } from './leads/lead-view-leads/lead-view-leads.component';
+import { LeadViewTrackerComponent } from './leads/lead-view-tracker/lead-view-tracker.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'dashboard',component:DashboardComponent},
   { path:'calender',component:CalenderComponent },
   { path:'visa-manager',component:VisaManagerComponent },
  /*  student routing */
-  { path:'student',component:StudentComponent,children:[  
+  { path:'student',component:StudentComponent,children:[
     { path:'addStudent',component:AddStudentComponent},
     { path:'academic',component:AcademicComponent},
     { path:'language',component:LanguageComponent},
     { path:'passport',component:PassportComponent},
-    {path: '**', redirectTo: 'addStudent'} 
+    {path: '**', redirectTo: 'addStudent'}
   ]},
   { path:'viewStudent',component:ViewStudentComponent},
   { path:'studentTracher',component:StudentTrackerComponent,children:[
@@ -35,14 +41,20 @@ const routes: Routes = [
     {path:'dropplanStudent',component:StudentTrackerDropplanComponent},
     {path:'**',redirectTo:'trackStudents'}
   ]},
-  { path:'studentDashboard',component:StudentDashboardComponent}
+  { path:'studentDashboard',component:StudentDashboardComponent},
   /* { path:'dashboard',component:DashboardComponent,children: [
 
     { path:'calender',component:CalenderComponent },
     {path: '**', redirectTo: 'calender'}
 
   ]} */
-
+  { path:'add-lead',component:AddleadComponent },
+   { path:'leadview',component:LeadViewComponent,children:[
+      {path:'viewLeads',component:LeadViewLeadsComponent},
+      {path:'followupStudent',component:StudentTrackerFollowupComponent},
+      {path:'dropplanStudent',component:StudentTrackerDropplanComponent},
+      {path:'**',redirectTo:'viewLeads'}
+    ]}
 ];
 
 @NgModule({

@@ -26,8 +26,8 @@
       <a mat-list-item [routerLink]="'/calender'"> Calender </a>
       <a mat-list-item (click)="toggleLeadsCollapsed()"> Leads Manager </a>
       <div *ngIf="!isLeadscollapsed">
-        <a mat-list-item [routerLink]="'/student'"> <i class="fa fa-circle-thin"></i>Add Leads </a>
-        <a mat-list-item [routerLink]="'/viewStudent'"> View Leads </a>
+        <a mat-list-item [routerLink]="'/add-lead'"> Add Leads </a>
+        <a mat-list-item [routerLink]="'/leadview'"> View Leads </a>
         <a mat-list-item [routerLink]="'/studentTracher'"> Import Leads</a>
         <a mat-list-item [routerLink]="'/studentDashboard'"> Lead Tracker </a>
         <a mat-list-item [routerLink]="'/studentDashboard'"> Lead Dashboard </a>
