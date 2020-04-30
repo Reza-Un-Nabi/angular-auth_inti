@@ -27,6 +27,9 @@ import { PassportComponent } from './student/passport/passport.component';
 import { StudentTrackerStudentsComponent } from './student/student-tracker-students/student-tracker-students.component';
 import { StudentTrackerFollowupComponent } from './student/student-tracker-followup/student-tracker-followup.component';
 import { StudentTrackerDropplanComponent } from './student/student-tracker-dropplan/student-tracker-dropplan.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { StudenPopupComponent } from './student/studen-popup/studen-popup.component';
+
 
 const matModules = [
   MatToolbarModule,
@@ -40,7 +43,8 @@ const matModules = [
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatDialogModule
     
 ];
 
@@ -61,8 +65,14 @@ const matModules = [
     PassportComponent,
     StudentTrackerStudentsComponent,
     StudentTrackerFollowupComponent,
-    StudentTrackerDropplanComponent
+    StudentTrackerDropplanComponent,
+    StudenPopupComponent
   ],
+  
+  entryComponents: [
+    StudenPopupComponent
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
