@@ -1,1 +1,40 @@
-<p>passport works!</p>
+<div class="div-position">
+    <h2 class="text-center">Add Passport Information</h2>
+    <form [formGroup]="" (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuFirstName">Passport No</label>
+                        <input type="text" class="form-control" id="stuFirstName" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="stuLastName">Date Of Expiry</label>
+                        <input type="date" class="form-control" id="stuLastName" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuAlterMolileNo">Date Of Issue</label>
+                        <input type="date" class="form-control" id="stuAlterMolileNo" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="stuCourse">Nationality</label>
+                        <select class="form-control" (change)="changeWebsite($event)">
+                            <option disabled>Select Country</option>
+                            <option>Choose Country</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+
+            <button type="submit" class="btn btn-default btn-lg">Submit</button>
+        </table>
+    </form>
+</div>
