@@ -8,6 +8,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,9 +28,12 @@ import { PassportComponent } from './student/passport/passport.component';
 import { StudentTrackerStudentsComponent } from './student/student-tracker-students/student-tracker-students.component';
 import { StudentTrackerFollowupComponent } from './student/student-tracker-followup/student-tracker-followup.component';
 import { StudentTrackerDropplanComponent } from './student/student-tracker-dropplan/student-tracker-dropplan.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import { StudenPopupComponent } from './student/studen-popup/studen-popup.component';
-
+import { LeadsComponent } from './leads/leads/leads.component';
+import { AddleadComponent } from './leads/addlead/addlead.component';
+import { LeadViewComponent } from './leads/lead-view/lead-view.component';
+import { LeadViewLeadsComponent } from './leads/lead-view-leads/lead-view-leads.component';
+import { LeadViewTrackerComponent } from './leads/lead-view-tracker/lead-view-tracker.component';
 
 const matModules = [
   MatToolbarModule,
@@ -45,7 +49,6 @@ const matModules = [
     MatSortModule,
     MatCheckboxModule,
     MatDialogModule
-    
 ];
 
 @NgModule({
@@ -66,7 +69,12 @@ const matModules = [
     StudentTrackerStudentsComponent,
     StudentTrackerFollowupComponent,
     StudentTrackerDropplanComponent,
-    StudenPopupComponent
+    StudenPopupComponent,
+    AddleadComponent,
+    LeadsComponent,
+    LeadViewComponent,
+    LeadViewLeadsComponent,
+    LeadViewTrackerComponent
   ],
   
   entryComponents: [
@@ -81,11 +89,11 @@ const matModules = [
     HttpClientModule,
     BrowserAnimationsModule,
     matModules
-   
+
   ],
   exports:[
     matModules
-   
+
   ],
   providers: [],
   bootstrap: [AppComponent]
