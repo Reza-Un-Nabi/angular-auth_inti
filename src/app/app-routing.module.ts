@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CalenderComponent} from './calender/calender.component';
 import {VisaManagerComponent} from './visa-manager/visa-manager.component';
+
+/* Student */
 import {StudentComponent} from './student/student/student.component'
 import {AddStudentComponent} from './student/add-student/add-student.component';
 import {ViewStudentComponent} from './student/view-student/view-student.component';
@@ -16,16 +18,25 @@ import {StudentTrackerStudentsComponent} from './student/student-tracker-student
 import {StudentTrackerFollowupComponent} from './student/student-tracker-followup/student-tracker-followup.component';
 import {StudentTrackerDropplanComponent} from './student/student-tracker-dropplan/student-tracker-dropplan.component';
 
+/* Leads  */
 import { AddleadComponent } from './leads/addlead/addlead.component';
 import { LeadViewComponent } from './leads/lead-view/lead-view.component';
 import { LeadViewLeadsComponent } from './leads/lead-view-leads/lead-view-leads.component';
 import { LeadViewTrackerComponent } from './leads/lead-view-tracker/lead-view-tracker.component';
+
+/* Application Manager */
+import {AddApplicationComponent} from './application-manager/add-application/add-application.component';
+import {ApplicationViewComponent} from './application-manager/application-view/application-view.component';
+import {ApplicationClientComponent} from './application-manager/application-client/application-client.component';
+import {ApplicationDashboardComponent} from './application-manager/application-dashboard/application-dashboard.component';
+import {ApplicationTrackerComponent} from './application-manager/application-tracker/application-tracker.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'dashboard',component:DashboardComponent},
   { path:'calender',component:CalenderComponent },
   { path:'visa-manager',component:VisaManagerComponent },
+
  /*  student routing */
   { path:'student',component:StudentComponent,children:[
     { path:'addStudent',component:AddStudentComponent},
@@ -54,7 +65,14 @@ const routes: Routes = [
       {path:'followupStudent',component:StudentTrackerFollowupComponent},
       {path:'dropplanStudent',component:StudentTrackerDropplanComponent},
       {path:'**',redirectTo:'viewLeads'}
-    ]}
+    ]},
+
+    /* Application Manager */
+    {path:'addApplication',component:AddApplicationComponent},
+    {path:'viewApplication',component:ApplicationViewComponent},
+    {path:'trackerApplication',component:ApplicationTrackerComponent},
+    {path:'dashboardApplication',component:ApplicationDashboardComponent},
+    {path:'clientApplication',component:ApplicationClientComponent}
 ];
 
 @NgModule({

@@ -34,6 +34,11 @@ import { AddleadComponent } from './leads/addlead/addlead.component';
 import { LeadViewComponent } from './leads/lead-view/lead-view.component';
 import { LeadViewLeadsComponent } from './leads/lead-view-leads/lead-view-leads.component';
 import { LeadViewTrackerComponent } from './leads/lead-view-tracker/lead-view-tracker.component';
+import { AddApplicationComponent } from './application-manager/add-application/add-application.component';
+import { ApplicationViewComponent } from './application-manager/application-view/application-view.component';
+import { ApplicationTrackerComponent } from './application-manager/application-tracker/application-tracker.component';
+import { ApplicationDashboardComponent } from './application-manager/application-dashboard/application-dashboard.component';
+import { ApplicationClientComponent } from './application-manager/application-client/application-client.component';
 
 const matModules = [
   MatToolbarModule,
@@ -74,7 +79,12 @@ const matModules = [
     LeadsComponent,
     LeadViewComponent,
     LeadViewLeadsComponent,
-    LeadViewTrackerComponent
+    LeadViewTrackerComponent,
+    AddApplicationComponent,
+    ApplicationViewComponent,
+    ApplicationTrackerComponent,
+    ApplicationDashboardComponent,
+    ApplicationClientComponent
   ],
   
   entryComponents: [
