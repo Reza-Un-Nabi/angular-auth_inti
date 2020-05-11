@@ -31,6 +31,14 @@ import {ApplicationClientComponent} from './application-manager/application-clie
 import {ApplicationDashboardComponent} from './application-manager/application-dashboard/application-dashboard.component';
 import {ApplicationTrackerComponent} from './application-manager/application-tracker/application-tracker.component';
 
+/* Accounts */
+import {StudentInvoiceComponent} from './accounts/student-invoice/student-invoice.component';
+import {UniversityInvoiceComponent} from './accounts/university-invoice/university-invoice.component';
+import {AgentInvoiceComponent} from './accounts/agent-invoice/agent-invoice.component';
+import {VisaInvoiceComponent} from './accounts/visa-invoice/visa-invoice.component';
+import {PaymentComponent} from './accounts/payment/payment.component';
+
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'dashboard',component:DashboardComponent},
@@ -59,6 +67,8 @@ const routes: Routes = [
     {path: '**', redirectTo: 'calender'}
 
   ]} */
+
+  /* Leads */
   { path:'add-lead',component:AddleadComponent },
    { path:'leadview',component:LeadViewComponent,children:[
       {path:'viewLeads',component:LeadViewLeadsComponent},
@@ -72,7 +82,14 @@ const routes: Routes = [
     {path:'viewApplication',component:ApplicationViewComponent},
     {path:'trackerApplication',component:ApplicationTrackerComponent},
     {path:'dashboardApplication',component:ApplicationDashboardComponent},
-    {path:'clientApplication',component:ApplicationClientComponent}
+    {path:'clientApplication',component:ApplicationClientComponent},
+
+    /* Accounts */
+    {path:'studentInvoices', component:StudentInvoiceComponent},
+    {path:'universityInvoices', component:UniversityInvoiceComponent},
+    {path:'agentnvoices', component:AgentInvoiceComponent},
+    {path:'visaInvoices', component:VisaInvoiceComponent},
+    {path:'payment', component:PaymentComponent},
 ];
 
 @NgModule({

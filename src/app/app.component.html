@@ -57,7 +57,7 @@
 
 
        <!-- Visa Manager Collaps -->
-      <a mat-list-item (click)="toggleVisaManagerCollapsed"> Visa Manager </a>
+      <a mat-list-item (click)="toggleVisaManagerCollapsed()"> Visa Manager </a>
       <div *ngIf="!isVisaManagerCollapsed">
 
 
@@ -65,9 +65,13 @@
 
 
       <!-- Accounts Collaps -->
-      <a mat-list-item (click)="toggleAccountCollapsed"> Accounts </a>
+      <a mat-list-item (click)="toggleAccountCollapsed()"> Accounts </a>
       <div *ngIf="!isAccountCollapsed">
-
+        <a mat-list-item [routerLink]="'/studentInvoices'">Student Invoices</a>
+        <a mat-list-item [routerLink]="'/universityInvoices'">University Invoices</a>
+        <a mat-list-item [routerLink]="'/agentnvoices'">Agent Invoices</a>
+        <a mat-list-item [routerLink]="'/visaInvoices'">Visa Invoices</a>
+        <a mat-list-item [routerLink]="'/payment'">Payments</a>
 
       </div>
 

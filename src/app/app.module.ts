@@ -39,6 +39,11 @@ import { ApplicationViewComponent } from './application-manager/application-view
 import { ApplicationTrackerComponent } from './application-manager/application-tracker/application-tracker.component';
 import { ApplicationDashboardComponent } from './application-manager/application-dashboard/application-dashboard.component';
 import { ApplicationClientComponent } from './application-manager/application-client/application-client.component';
+import { StudentInvoiceComponent } from './accounts/student-invoice/student-invoice.component';
+import { UniversityInvoiceComponent } from './accounts/university-invoice/university-invoice.component';
+import { AgentInvoiceComponent } from './accounts/agent-invoice/agent-invoice.component';
+import { VisaInvoiceComponent } from './accounts/visa-invoice/visa-invoice.component';
+import { PaymentComponent } from './accounts/payment/payment.component';
 
 const matModules = [
   MatToolbarModule,
@@ -84,7 +89,12 @@ const matModules = [
     ApplicationViewComponent,
     ApplicationTrackerComponent,
     ApplicationDashboardComponent,
-    ApplicationClientComponent
+    ApplicationClientComponent,
+    StudentInvoiceComponent,
+    UniversityInvoiceComponent,
+    AgentInvoiceComponent,
+    VisaInvoiceComponent,
+    PaymentComponent
   ],
   
   entryComponents: [
