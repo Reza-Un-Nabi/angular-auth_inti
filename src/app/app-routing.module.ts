@@ -38,6 +38,16 @@ import {AgentInvoiceComponent} from './accounts/agent-invoice/agent-invoice.comp
 import {VisaInvoiceComponent} from './accounts/visa-invoice/visa-invoice.component';
 import {PaymentComponent} from './accounts/payment/payment.component';
 
+/* Admin */
+
+import {CountryComponent} from './admin/country/country.component';
+import {CourseComponent} from './admin/course/course.component';
+import {SourceComponent} from './admin/source/source.component';
+import {CheckListComponent} from './admin/check-list/check-list.component';
+import {BranchComponent} from './admin/branch/branch.component';
+import {PermissionComponent} from './admin/permission/permission.component';
+import {SmsTemplateComponent} from './admin/sms-template/sms-template.component';
+import {EmailTemplateComponent} from './admin/email-template/email-template.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -90,6 +100,17 @@ const routes: Routes = [
     {path:'agentnvoices', component:AgentInvoiceComponent},
     {path:'visaInvoices', component:VisaInvoiceComponent},
     {path:'payment', component:PaymentComponent},
+
+    /* Admin */
+
+    {path:'addCountry', component:CountryComponent},
+    {path:'addCourse', component:CourseComponent},
+    {path:'addSource', component:SourceComponent},
+    {path:'addPermission', component:PermissionComponent},
+    {path:'addBranch', component:BranchComponent},
+    {path:'addCheckList', component:CheckListComponent},
+    {path:'addSmsTemplate', component:SmsTemplateComponent},
+    {path:'addEmailTemplate', component:EmailTemplateComponent}
 ];
 
 @NgModule({

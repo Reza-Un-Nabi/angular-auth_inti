@@ -27,7 +27,7 @@
 
        <!-- Leads Collaps -->
       <a mat-list-item (click)="toggleLeadsCollapsed()"> Leads Manager </a>
-      <div *ngIf="!isLeadscollapsed">
+      <div class="div-background" *ngIf="!isLeadscollapsed">
         <a mat-list-item [routerLink]="'/add-lead'"> Add Leads </a>
         <a mat-list-item [routerLink]="'/leadview'"> View Leads </a>
         <a mat-list-item [routerLink]="'/studentTracher'"> Import Leads</a>
@@ -38,7 +38,7 @@
 
       <!-- Student Collaps -->
       <a mat-list-item (click)="toggleCollapsed()"> Student Manager </a>
-      <div *ngIf="!iscollapsed">
+      <div class="div-background" *ngIf="!iscollapsed">
         <a mat-list-item [routerLink]="'/student'"> Add Student </a>
         <a mat-list-item [routerLink]="'/viewStudent'"> View Student </a>
         <a mat-list-item [routerLink]="'/studentTracher'"> Student Tracker</a>
@@ -47,7 +47,7 @@
 
        <!-- Application Manager Collaps -->
        <a mat-list-item (click)="toggleApplicationCollapsed()"> Application Manager </a>
-        <div *ngIf="!isApplicationCollapsed">
+        <div class="div-background"  *ngIf="!isApplicationCollapsed">
           <a mat-list-item [routerLink]="'/addApplication'"> Add Application </a>
           <a mat-list-item [routerLink]="'/viewApplication'"> View Application </a>
           <a mat-list-item [routerLink]="'/trackerApplication'"> Application Tracker</a>
@@ -58,7 +58,7 @@
 
        <!-- Visa Manager Collaps -->
       <a mat-list-item (click)="toggleVisaManagerCollapsed()"> Visa Manager </a>
-      <div *ngIf="!isVisaManagerCollapsed">
+      <div class="div-background" *ngIf="!isVisaManagerCollapsed">
 
 
       </div>
@@ -66,7 +66,7 @@
 
       <!-- Accounts Collaps -->
       <a mat-list-item (click)="toggleAccountCollapsed()"> Accounts </a>
-      <div *ngIf="!isAccountCollapsed">
+      <div class="div-background"  *ngIf="!isAccountCollapsed">
         <a mat-list-item [routerLink]="'/studentInvoices'">Student Invoices</a>
         <a mat-list-item [routerLink]="'/universityInvoices'">University Invoices</a>
         <a mat-list-item [routerLink]="'/agentnvoices'">Agent Invoices</a>
@@ -79,7 +79,20 @@
       <a mat-list-item [routerLink]="'/activities'"> Univesity </a>
       <a mat-list-item [routerLink]="'/create-activity'"> Againts </a>
       <a mat-list-item [routerLink]="'/create-activity'"> Users </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Admin </a>
+
+      <!-- Admin -->
+      <a mat-list-item (click)="toggleAdminCollapsed()"> Admin </a>
+      <div  class="div-background"  *ngIf="!isAdminCollapsed" >
+          <a mat-list-item [routerLink]="'/addCountry'">Add Country</a>
+          <a mat-list-item [routerLink]="'/addCourse'">Add Course</a>
+          <a mat-list-item [routerLink]="'/addSource'">Add Source</a>
+          <a mat-list-item [routerLink]="'/addBranch'">Add Branch</a>
+          <a mat-list-item [routerLink]="'/addPermission'">Permission</a>
+          <a mat-list-item [routerLink]="'/addCheckList'">Check List</a>
+          <a mat-list-item [routerLink]="'/addSmsTemplate'">Add SMS Template</a>
+          <a mat-list-item [routerLink]="'/addEmailTemplate'">Add Email Template</a>
+  
+        </div>
      
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 

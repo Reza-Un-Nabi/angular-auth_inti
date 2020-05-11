@@ -44,6 +44,14 @@ import { UniversityInvoiceComponent } from './accounts/university-invoice/univer
 import { AgentInvoiceComponent } from './accounts/agent-invoice/agent-invoice.component';
 import { VisaInvoiceComponent } from './accounts/visa-invoice/visa-invoice.component';
 import { PaymentComponent } from './accounts/payment/payment.component';
+import { CountryComponent } from './admin/country/country.component';
+import { CourseComponent } from './admin/course/course.component';
+import { SourceComponent } from './admin/source/source.component';
+import { PermissionComponent } from './admin/permission/permission.component';
+import { CheckListComponent } from './admin/check-list/check-list.component';
+import { SmsTemplateComponent } from './admin/sms-template/sms-template.component';
+import { EmailTemplateComponent } from './admin/email-template/email-template.component';
+import { BranchComponent } from './admin/branch/branch.component';
 
 const matModules = [
   MatToolbarModule,
@@ -94,7 +102,15 @@ const matModules = [
     UniversityInvoiceComponent,
     AgentInvoiceComponent,
     VisaInvoiceComponent,
-    PaymentComponent
+    PaymentComponent,
+    CountryComponent,
+    CourseComponent,
+    SourceComponent,
+    PermissionComponent,
+    CheckListComponent,
+    SmsTemplateComponent,
+    EmailTemplateComponent,
+    BranchComponent
   ],
   
   entryComponents: [
