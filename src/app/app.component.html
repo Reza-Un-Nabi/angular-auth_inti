@@ -37,7 +37,7 @@
       </div>
 
       <!-- Student Collaps -->
-      <a mat-list-item (click)="toggleCollapsed()"> Student Manager </a>
+      <a mat-list-item  (click)="toggleCollapsed()"> Student Manager </a>
       <div class="div-background" *ngIf="!iscollapsed">
         <a mat-list-item [routerLink]="'/student'"> Add Student </a>
         <a mat-list-item [routerLink]="'/viewStudent'"> View Student </a>

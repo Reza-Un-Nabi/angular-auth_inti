@@ -2,3 +2,20 @@
 
     background-color: palegreen;
 }
+
+/* .mat-drawer-container {
+    background-color: #ffc107;
+    
+} */
+
+.mat-list-item {
+    font-size: 13px;
+    max-height: 40px;
+    border: silver thin solid;
+}
+
+.mat-list-item:hover {
+    background-color: yellow;
+  }
+
+  

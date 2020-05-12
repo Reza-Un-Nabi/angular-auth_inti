@@ -17,22 +17,77 @@ export class AppComponent {
 
   toggleCollapsed() {
     this.iscollapsed = !this.iscollapsed;
+    
+    if (!this.iscollapsed) {
+    
+      this.isApplicationCollapsed = true;
+      this.isLeadscollapsed = true;
+      this.isVisaManagerCollapsed = true;
+      this.isAccountCollapsed = true;
+      this.isAdminCollapsed = true;
+    }
+    
   }
   toggleLeadsCollapsed() {
     this.isLeadscollapsed = !this.isLeadscollapsed;
+
+    if (!this.isLeadscollapsed) {
+    
+      this.isApplicationCollapsed = true;
+      this.iscollapsed = true;
+      this.isVisaManagerCollapsed = true;
+      this.isAccountCollapsed = true;
+      this.isAdminCollapsed = true;
+    }
+    
   }
 
   toggleApplicationCollapsed() {
     this.isApplicationCollapsed = !this.isApplicationCollapsed;
+
+    if (!this.isApplicationCollapsed) {
+    
+      this.isLeadscollapsed = true;
+      this.iscollapsed = true;
+      this.isVisaManagerCollapsed = true;
+      this.isAccountCollapsed = true;
+      this.isAdminCollapsed = true;
+    }
   }
 
   toggleVisaManagerCollapsed() {
     this.isVisaManagerCollapsed = !this.isVisaManagerCollapsed;
+
+    if (!this.isVisaManagerCollapsed) {
+    
+      this.isLeadscollapsed = true;
+      this.iscollapsed = true;
+      this.isApplicationCollapsed = true;
+      this.isAccountCollapsed = true;
+      this.isAdminCollapsed = true;
+    }
   }
   toggleAccountCollapsed() {
     this.isAccountCollapsed = !this.isAccountCollapsed;
+
+    if (!this.isAccountCollapsed) {
+    
+      this.isLeadscollapsed = true;
+      this.iscollapsed = true;
+      this.isVisaManagerCollapsed = true;
+      this.isApplicationCollapsed = true;
+      this.isAdminCollapsed = true;
+    }
   }
   toggleAdminCollapsed() {
     this.isAdminCollapsed = !this.isAdminCollapsed;
+    if (!this.isAdminCollapsed) {
+    
+      this.isLeadscollapsed = true;
+      this.iscollapsed = true;
+      this.isVisaManagerCollapsed = true;
+      this.isAccountCollapsed = true;
+      this.isApplicationCollapsed = true;
+    }
   }
 }
