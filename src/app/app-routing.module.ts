@@ -39,8 +39,13 @@ import {PendingInvoicesComponent} from './accounts/studentInvoice/pending-invoic
 import {PaidInvoicesComponent} from './accounts/studentInvoice/paid-invoices/paid-invoices.component';
 import {FeatureInvoicesComponent} from './accounts/studentInvoice/feature-invoices/feature-invoices.component';
 
-
+  /* University Invoice */
 import {UniversityInvoiceComponent} from './accounts/universityInvoice/university-invoice/university-invoice.component';
+import {UnivaddInvoiceComponent} from './accounts/universityInvoice/univadd-invoice/univadd-invoice.component';
+import {UnivpendingInvoiceComponent} from './accounts/universityInvoice/univpending-invoice/univpending-invoice.component';
+import {UnivpaidInvoiceComponent} from './accounts/universityInvoice/univpaid-invoice/univpaid-invoice.component';
+import {UnivFeatureInvoiceComponent} from './accounts/universityInvoice/univ-feature-invoice/univ-feature-invoice.component';
+
 import {AgentInvoiceComponent} from './accounts/agentInvoice/agent-invoice/agent-invoice.component';
 import {VisaInvoiceComponent} from './accounts/visaInvoice/visa-invoice/visa-invoice.component';
 
@@ -89,7 +94,7 @@ const routes: Routes = [
   ]} */
 
   /* Leads */
-  { path:'add-lead',component:AddleadComponent },
+   { path:'add-lead',component:AddleadComponent },
    { path:'leadview',component:LeadViewComponent,children:[
       {path:'viewLeads',component:LeadViewLeadsComponent},
       {path:'followupStudent',component:StudentTrackerFollowupComponent},
@@ -114,7 +119,13 @@ const routes: Routes = [
         {path:'**',redirectTo:'studentPendingInvoice'}
     ]},
       /* University Invoices */
-    {path:'universityInvoices', component:UniversityInvoiceComponent},
+    {path:'addUniversityInvoice',component:UnivaddInvoiceComponent},
+    {path:'universityInvoices', component:UniversityInvoiceComponent,children:[
+      {path:'universityPendingInvoice',component:UnivpendingInvoiceComponent},
+      {path:'universityPaidInvoice',component:UnivpaidInvoiceComponent},
+      {path:'universityFeatureInvoice',component:UnivFeatureInvoiceComponent},
+      {path:'**',redirectTo:'universityPendingInvoice'}
+    ]},
 
        /* Agent Invoices */
     {path:'agentnvoices', component:AgentInvoiceComponent},
@@ -123,7 +134,7 @@ const routes: Routes = [
     {path:'visaInvoices', component:VisaInvoiceComponent},
 
       /* Payment */
-      {path:'addPayment', component:AddPaymentComponent},
+    {path:'addPayment', component:AddPaymentComponent},
     {path:'payment', component:PaymentComponent},
 
     /* Admin */

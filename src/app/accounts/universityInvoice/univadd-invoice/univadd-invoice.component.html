@@ -1,0 +1,113 @@
+<div class="div-position">
+    <h2 class="text-center">Add Institute Invoicen</h2>
+    <form [formGroup]="" (ngSubmit)="onSubmit()">
+        <table>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuFirstName">First Name</label>
+                        <select class="form-control" (change)="changeWebsite($event)">
+                            <option disabled>Select Client</option>
+                            <option>Choose Client</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuLastName">Invoice Date *</label>
+                        <input type="date" class="form-control" id="InvoiceDate" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="stuAlterMolileNo">Tuition Fee *</label>
+                        <input type="number" class="form-control" id="stuAlterMolileNo" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuAddress">Enrollment Fee *</label>
+                        <input type="number" class="form-control" id="stuAddress" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="stuAddress">Material Fee *</label>
+                            <input type="number" class="form-control" id="stuAddress" />
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label for="stuIntake">COE Fee *</label>
+                        <input type="number" class="form-control" id="stuIntake" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="stuSource">Other Fee*</label>
+                        <input type="number" class="form-control" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group">
+                        <label for="stuRemark">Sub Total *</label>
+                        <input type="number" class="form-control" id="stuRemark" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group">
+                        <label for="stuRemark">Commission Percent *</label>
+                        <input type="number" class="form-control" id="stuRemark" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="stuRemark">GST On Commission Amount</label>
+                        <input type="checkbox" class="form-control" id="stuRemark" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    <div class="form-group">
+                        <label for="stuRemark">Commission Amount*</label>
+                        <input type="number" class="form-control" id="stuRemark" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Total Commision</td>
+            </tr>
+            <tr>
+                <td>
+                        <div class="form-group">
+                                <label for="stuRemark">Total with GST</label>
+                                <input type="number" class="form-control" id="stuRemark" />
+                            </div>
+                </td>
+                <td>
+                        <div class="form-group">
+                                <label for="stuRemark">Payable To College</label>
+                                <input type="number" class="form-control" id="stuRemark" />
+                            </div>
+                </td>
+            </tr>
+            <button type="submit" class="btn btn-default btn-lg">Submit</button>
+        </table>
+    </form>
+</div>

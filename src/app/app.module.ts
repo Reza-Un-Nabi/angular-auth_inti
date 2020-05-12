@@ -57,6 +57,10 @@ import { PendingInvoicesComponent } from './accounts/studentInvoice/pending-invo
 import { PaidInvoicesComponent } from './accounts/studentInvoice/paid-invoices/paid-invoices.component';
 import { FeatureInvoicesComponent } from './accounts/studentInvoice/feature-invoices/feature-invoices.component';
 import { AddPaymentComponent } from './accounts/payments/add-payment/add-payment.component';
+import { UnivFeatureInvoiceComponent } from './accounts/universityInvoice/univ-feature-invoice/univ-feature-invoice.component';
+import { UnivpendingInvoiceComponent } from './accounts/universityInvoice/univpending-invoice/univpending-invoice.component';
+import { UnivpaidInvoiceComponent } from './accounts/universityInvoice/univpaid-invoice/univpaid-invoice.component';
+import { UnivaddInvoiceComponent } from './accounts/universityInvoice/univadd-invoice/univadd-invoice.component';
 
 const matModules = [
   MatToolbarModule,
@@ -120,7 +124,11 @@ const matModules = [
     PendingInvoicesComponent,
     PaidInvoicesComponent,
     FeatureInvoicesComponent,
-    AddPaymentComponent
+    AddPaymentComponent,
+    UnivFeatureInvoiceComponent,
+    UnivpendingInvoiceComponent,
+    UnivpaidInvoiceComponent,
+    UnivaddInvoiceComponent
   ],
   
   entryComponents: [
