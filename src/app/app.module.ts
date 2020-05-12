@@ -39,11 +39,11 @@ import { ApplicationViewComponent } from './application-manager/application-view
 import { ApplicationTrackerComponent } from './application-manager/application-tracker/application-tracker.component';
 import { ApplicationDashboardComponent } from './application-manager/application-dashboard/application-dashboard.component';
 import { ApplicationClientComponent } from './application-manager/application-client/application-client.component';
-import { StudentInvoiceComponent } from './accounts/student-invoice/student-invoice.component';
-import { UniversityInvoiceComponent } from './accounts/university-invoice/university-invoice.component';
-import { AgentInvoiceComponent } from './accounts/agent-invoice/agent-invoice.component';
-import { VisaInvoiceComponent } from './accounts/visa-invoice/visa-invoice.component';
-import { PaymentComponent } from './accounts/payment/payment.component';
+import { StudentInvoiceComponent } from './accounts/studentInvoice/student-invoice/student-invoice.component';
+import { UniversityInvoiceComponent } from './accounts/universityInvoice/university-invoice/university-invoice.component';
+import { AgentInvoiceComponent } from './accounts/agentInvoice/agent-invoice/agent-invoice.component';
+import { VisaInvoiceComponent } from './accounts/visaInvoice/visa-invoice/visa-invoice.component';
+import { PaymentComponent } from './accounts/payments/payment/payment.component';
 import { CountryComponent } from './admin/country/country.component';
 import { CourseComponent } from './admin/course/course.component';
 import { SourceComponent } from './admin/source/source.component';
@@ -52,6 +52,11 @@ import { CheckListComponent } from './admin/check-list/check-list.component';
 import { SmsTemplateComponent } from './admin/sms-template/sms-template.component';
 import { EmailTemplateComponent } from './admin/email-template/email-template.component';
 import { BranchComponent } from './admin/branch/branch.component';
+import { AddInvoiceComponent } from './accounts/studentInvoice/add-invoice/add-invoice.component';
+import { PendingInvoicesComponent } from './accounts/studentInvoice/pending-invoices/pending-invoices.component';
+import { PaidInvoicesComponent } from './accounts/studentInvoice/paid-invoices/paid-invoices.component';
+import { FeatureInvoicesComponent } from './accounts/studentInvoice/feature-invoices/feature-invoices.component';
+import { AddPaymentComponent } from './accounts/payments/add-payment/add-payment.component';
 
 const matModules = [
   MatToolbarModule,
@@ -110,7 +115,12 @@ const matModules = [
     CheckListComponent,
     SmsTemplateComponent,
     EmailTemplateComponent,
-    BranchComponent
+    BranchComponent,
+    AddInvoiceComponent,
+    PendingInvoicesComponent,
+    PaidInvoicesComponent,
+    FeatureInvoicesComponent,
+    AddPaymentComponent
   ],
   
   entryComponents: [

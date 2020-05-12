@@ -32,11 +32,21 @@ import {ApplicationDashboardComponent} from './application-manager/application-d
 import {ApplicationTrackerComponent} from './application-manager/application-tracker/application-tracker.component';
 
 /* Accounts */
-import {StudentInvoiceComponent} from './accounts/student-invoice/student-invoice.component';
-import {UniversityInvoiceComponent} from './accounts/university-invoice/university-invoice.component';
-import {AgentInvoiceComponent} from './accounts/agent-invoice/agent-invoice.component';
-import {VisaInvoiceComponent} from './accounts/visa-invoice/visa-invoice.component';
-import {PaymentComponent} from './accounts/payment/payment.component';
+  /* Student Invoice */
+import {StudentInvoiceComponent} from './accounts/studentInvoice/student-invoice/student-invoice.component';
+import {AddInvoiceComponent} from './accounts/studentInvoice/add-invoice/add-invoice.component';
+import {PendingInvoicesComponent} from './accounts/studentInvoice/pending-invoices/pending-invoices.component';
+import {PaidInvoicesComponent} from './accounts/studentInvoice/paid-invoices/paid-invoices.component';
+import {FeatureInvoicesComponent} from './accounts/studentInvoice/feature-invoices/feature-invoices.component';
+
+
+import {UniversityInvoiceComponent} from './accounts/universityInvoice/university-invoice/university-invoice.component';
+import {AgentInvoiceComponent} from './accounts/agentInvoice/agent-invoice/agent-invoice.component';
+import {VisaInvoiceComponent} from './accounts/visaInvoice/visa-invoice/visa-invoice.component';
+
+  /* Payment */
+  import {AddPaymentComponent} from './accounts/payments/add-payment/add-payment.component';
+import {PaymentComponent} from './accounts/payments/payment/payment.component';
 
 /* Admin */
 
@@ -95,10 +105,25 @@ const routes: Routes = [
     {path:'clientApplication',component:ApplicationClientComponent},
 
     /* Accounts */
-    {path:'studentInvoices', component:StudentInvoiceComponent},
+        /* Student Invoices */
+    {path:'addStudentInvoice',component:AddInvoiceComponent},
+    {path:'studentInvoices', component:StudentInvoiceComponent,children:[
+        {path:'studentPendingInvoice',component:PendingInvoicesComponent},
+        {path:'studentPaidInvoice',component:PaidInvoicesComponent},
+        {path:'studentFeatureInvoice',component:FeatureInvoicesComponent},
+        {path:'**',redirectTo:'studentPendingInvoice'}
+    ]},
+      /* University Invoices */
     {path:'universityInvoices', component:UniversityInvoiceComponent},
+
+       /* Agent Invoices */
     {path:'agentnvoices', component:AgentInvoiceComponent},
+
+       /* Visa Invoices */
     {path:'visaInvoices', component:VisaInvoiceComponent},
+
+      /* Payment */
+      {path:'addPayment', component:AddPaymentComponent},
     {path:'payment', component:PaymentComponent},
 
     /* Admin */
