@@ -30,8 +30,8 @@
       <div class="div-background" *ngIf="!isLeadscollapsed">
         <a mat-list-item [routerLink]="'/add-lead'"> Add Leads </a>
         <a mat-list-item [routerLink]="'/leadview'"> View Leads </a>
-        <a mat-list-item [routerLink]="'/studentTracher'"> Import Leads</a>
-        <a mat-list-item [routerLink]="'/studentDashboard'"> Lead Tracker </a>
+        <a mat-list-item [routerLink]="'/lead-view-import'"> Import Leads</a>
+        <a mat-list-item [routerLink]="'/studentTracher'"> Lead Tracker </a>
         <a mat-list-item [routerLink]="'/studentDashboard'"> Lead Dashboard </a>
         <a mat-list-item [routerLink]="'/studentDashboard'"> Today Calls </a>
       </div>
@@ -91,9 +91,9 @@
           <a mat-list-item [routerLink]="'/addCheckList'">Check List</a>
           <a mat-list-item [routerLink]="'/addSmsTemplate'">Add SMS Template</a>
           <a mat-list-item [routerLink]="'/addEmailTemplate'">Add Email Template</a>
-  
+
         </div>
-     
+
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 
     </mat-nav-list>

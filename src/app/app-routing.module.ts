@@ -63,6 +63,7 @@ import {BranchComponent} from './admin/branch/branch.component';
 import {PermissionComponent} from './admin/permission/permission.component';
 import {SmsTemplateComponent} from './admin/sms-template/sms-template.component';
 import {EmailTemplateComponent} from './admin/email-template/email-template.component';
+import{LeadViewImportComponent} from './leads/lead-view-import/lead-view-import.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -101,6 +102,7 @@ const routes: Routes = [
       {path:'dropplanStudent',component:StudentTrackerDropplanComponent},
       {path:'**',redirectTo:'viewLeads'}
     ]},
+    { path:'lead-view-import',component:LeadViewImportComponent},
 
     /* Application Manager */
     {path:'addApplication',component:AddApplicationComponent},

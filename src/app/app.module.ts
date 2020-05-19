@@ -61,6 +61,7 @@ import { UnivFeatureInvoiceComponent } from './accounts/universityInvoice/univ-f
 import { UnivpendingInvoiceComponent } from './accounts/universityInvoice/univpending-invoice/univpending-invoice.component';
 import { UnivpaidInvoiceComponent } from './accounts/universityInvoice/univpaid-invoice/univpaid-invoice.component';
 import { UnivaddInvoiceComponent } from './accounts/universityInvoice/univadd-invoice/univadd-invoice.component';
+import { LeadViewImportComponent } from './leads/lead-view-import/lead-view-import.component';
 
 const matModules = [
   MatToolbarModule,
@@ -128,7 +129,8 @@ const matModules = [
     UnivFeatureInvoiceComponent,
     UnivpendingInvoiceComponent,
     UnivpaidInvoiceComponent,
-    UnivaddInvoiceComponent
+    UnivaddInvoiceComponent,
+    LeadViewImportComponent
   ],
   
   entryComponents: [
