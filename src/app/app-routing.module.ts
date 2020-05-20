@@ -23,6 +23,7 @@ import { AddleadComponent } from './leads/addlead/addlead.component';
 import { LeadViewComponent } from './leads/lead-view/lead-view.component';
 import { LeadViewLeadsComponent } from './leads/lead-view-leads/lead-view-leads.component';
 import { LeadViewTrackerComponent } from './leads/lead-view-tracker/lead-view-tracker.component';
+import{LeadViewImportComponent} from './leads/lead-view-import/lead-view-import.component';
 
 /* Application Manager */
 import {AddApplicationComponent} from './application-manager/add-application/add-application.component';
@@ -63,7 +64,12 @@ import {BranchComponent} from './admin/branch/branch.component';
 import {PermissionComponent} from './admin/permission/permission.component';
 import {SmsTemplateComponent} from './admin/sms-template/sms-template.component';
 import {EmailTemplateComponent} from './admin/email-template/email-template.component';
-import{LeadViewImportComponent} from './leads/lead-view-import/lead-view-import.component';
+
+
+/* University */
+import { AddUniversityComponent } from './university/add-university/add-university.component';
+import { ViewUniversityComponent } from './university/view-university/view-university.component';
+import { BulkUploadUniversityComponent } from './university/bulk-upload-university/bulk-upload-university.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -148,7 +154,12 @@ const routes: Routes = [
     {path:'addBranch', component:BranchComponent},
     {path:'addCheckList', component:CheckListComponent},
     {path:'addSmsTemplate', component:SmsTemplateComponent},
-    {path:'addEmailTemplate', component:EmailTemplateComponent}
+    {path:'addEmailTemplate', component:EmailTemplateComponent},
+
+    /* University */
+    {path:'addUniversity', component:AddUniversityComponent},
+    {path:'viewUniversity', component:ViewUniversityComponent},
+    {path:'bulkUploadUniversity', component:BulkUploadUniversityComponent}
 ];
 
 @NgModule({

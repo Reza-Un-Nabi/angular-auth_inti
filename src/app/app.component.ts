@@ -12,41 +12,42 @@ export class AppComponent {
   isVisaManagerCollapsed: boolean = true;
   isAccountCollapsed: boolean = true;
   isAdminCollapsed: boolean = true;
+  isUniversityCollapsed = true;
 
   title = 'crs-front-end';
 
   toggleCollapsed() {
     this.iscollapsed = !this.iscollapsed;
-    
+
     if (!this.iscollapsed) {
-    
+
       this.isApplicationCollapsed = true;
       this.isLeadscollapsed = true;
       this.isVisaManagerCollapsed = true;
       this.isAccountCollapsed = true;
       this.isAdminCollapsed = true;
     }
-    
+
   }
   toggleLeadsCollapsed() {
     this.isLeadscollapsed = !this.isLeadscollapsed;
 
     if (!this.isLeadscollapsed) {
-    
+
       this.isApplicationCollapsed = true;
       this.iscollapsed = true;
       this.isVisaManagerCollapsed = true;
       this.isAccountCollapsed = true;
       this.isAdminCollapsed = true;
     }
-    
+
   }
 
   toggleApplicationCollapsed() {
     this.isApplicationCollapsed = !this.isApplicationCollapsed;
 
     if (!this.isApplicationCollapsed) {
-    
+
       this.isLeadscollapsed = true;
       this.iscollapsed = true;
       this.isVisaManagerCollapsed = true;
@@ -59,7 +60,7 @@ export class AppComponent {
     this.isVisaManagerCollapsed = !this.isVisaManagerCollapsed;
 
     if (!this.isVisaManagerCollapsed) {
-    
+
       this.isLeadscollapsed = true;
       this.iscollapsed = true;
       this.isApplicationCollapsed = true;
@@ -71,7 +72,7 @@ export class AppComponent {
     this.isAccountCollapsed = !this.isAccountCollapsed;
 
     if (!this.isAccountCollapsed) {
-    
+
       this.isLeadscollapsed = true;
       this.iscollapsed = true;
       this.isVisaManagerCollapsed = true;
@@ -82,7 +83,7 @@ export class AppComponent {
   toggleAdminCollapsed() {
     this.isAdminCollapsed = !this.isAdminCollapsed;
     if (!this.isAdminCollapsed) {
-    
+
       this.isLeadscollapsed = true;
       this.iscollapsed = true;
       this.isVisaManagerCollapsed = true;
@@ -90,4 +91,15 @@ export class AppComponent {
       this.isApplicationCollapsed = true;
     }
   }
+    toggleUniversityCollapsed() {
+      this.isUniversityCollapsed = !this.isUniversityCollapsed;
+      if (!this.isUniversityCollapsed) {
+
+        this.isLeadscollapsed = true;
+        this.iscollapsed = true;
+        this.isVisaManagerCollapsed = true;
+        this.isAccountCollapsed = true;
+        this.isApplicationCollapsed = true;
+      }
+    }
 }

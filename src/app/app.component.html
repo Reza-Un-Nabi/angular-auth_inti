@@ -72,11 +72,17 @@
         <a mat-list-item [routerLink]="'/agentnvoices'">Agent Invoices</a>
         <a mat-list-item [routerLink]="'/visaInvoices'">Visa Invoices</a>
         <a mat-list-item [routerLink]="'/payment'">Payments</a>
+      </div>
 
+      <!-- University Collaps -->
+      <a mat-list-item (click)="toggleUniversityCollapsed()"> Univesity </a>
+      <div class="div-background"  *ngIf="!isUniversityCollapsed">
+        <a mat-list-item [routerLink]="'/addUniversity'">Add University</a>
+        <a mat-list-item [routerLink]="'/viewUniversity'">View University </a>
+        <a mat-list-item [routerLink]="'/bulkUploadUniversity'">Bulk Upload</a>
       </div>
 
       <a mat-list-item [routerLink]="'/create-contact'"> Patners </a>
-      <a mat-list-item [routerLink]="'/activities'"> Univesity </a>
       <a mat-list-item [routerLink]="'/create-activity'"> Againts </a>
       <a mat-list-item [routerLink]="'/create-activity'"> Users </a>
 
