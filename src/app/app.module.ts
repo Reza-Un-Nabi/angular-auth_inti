@@ -15,8 +15,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CalenderComponent } from './calender/calender.component';
-import { VisaManagerComponent } from './visa-manager/visa-manager.component';
-
 import {StudentComponent} from './student/student/student.component';
 import { AddStudentComponent } from './student/add-student/add-student.component';
 import { ViewStudentComponent } from './student/view-student/view-student.component';
@@ -65,6 +63,8 @@ import { LeadViewImportComponent } from './leads/lead-view-import/lead-view-impo
 import { AddUniversityComponent } from './university/add-university/add-university.component';
 import { ViewUniversityComponent } from './university/view-university/view-university.component';
 import { BulkUploadUniversityComponent } from './university/bulk-upload-university/bulk-upload-university.component';
+import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
+import { ViewVisaComponent } from './visa-manager/view-visa/view-visa.component';
 
 const matModules = [
   MatToolbarModule,
@@ -88,7 +88,6 @@ const matModules = [
     LoginComponent,
     DashboardComponent,
     CalenderComponent,
-    VisaManagerComponent,
     StudentComponent,
     AddStudentComponent,
     ViewStudentComponent,
@@ -136,9 +135,11 @@ const matModules = [
     LeadViewImportComponent,
     AddUniversityComponent,
     ViewUniversityComponent,
-    BulkUploadUniversityComponent
+    BulkUploadUniversityComponent,
+    AddVisaComponent,
+    ViewVisaComponent
   ],
-  
+
   entryComponents: [
     StudenPopupComponent
   ],

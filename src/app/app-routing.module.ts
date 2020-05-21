@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {CalenderComponent} from './calender/calender.component';
-import {VisaManagerComponent} from './visa-manager/visa-manager.component';
 
 /* Student */
 import {StudentComponent} from './student/student/student.component'
@@ -71,11 +70,13 @@ import { AddUniversityComponent } from './university/add-university/add-universi
 import { ViewUniversityComponent } from './university/view-university/view-university.component';
 import { BulkUploadUniversityComponent } from './university/bulk-upload-university/bulk-upload-university.component';
 
+/* Visa Manager */
+import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path:'dashboard',component:DashboardComponent},
   { path:'calender',component:CalenderComponent },
-  { path:'visa-manager',component:VisaManagerComponent },
 
  /*  student routing */
   { path:'student',component:StudentComponent,children:[
@@ -159,7 +160,10 @@ const routes: Routes = [
     /* University */
     {path:'addUniversity', component:AddUniversityComponent},
     {path:'viewUniversity', component:ViewUniversityComponent},
-    {path:'bulkUploadUniversity', component:BulkUploadUniversityComponent}
+    {path:'bulkUploadUniversity', component:BulkUploadUniversityComponent},
+
+      /* Visa Manager */
+    {path:'addVisa', component:AddVisaComponent},
 ];
 
 @NgModule({

@@ -59,7 +59,7 @@
        <!-- Visa Manager Collaps -->
       <a mat-list-item (click)="toggleVisaManagerCollapsed()"> Visa Manager </a>
       <div class="div-background" *ngIf="!isVisaManagerCollapsed">
-
+        <a mat-list-item [routerLink]="'/addVisa'"> Add Visa </a>
 
       </div>
 
