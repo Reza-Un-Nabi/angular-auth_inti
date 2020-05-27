@@ -74,7 +74,8 @@ import { BulkUploadUniversityComponent } from './university/bulk-upload-universi
 import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path:'login',component:LoginComponent},
   { path:'dashboard',component:DashboardComponent},
   { path:'calender',component:CalenderComponent },
 

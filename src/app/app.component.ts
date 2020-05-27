@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import {TokenStorageService} from './_services/token-storage.service'
+import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   iscollapsed: boolean = true;
   isLeadscollapsed: boolean = true;
   isApplicationCollapsed: boolean = true;
@@ -13,8 +16,20 @@ export class AppComponent {
   isAccountCollapsed: boolean = true;
   isAdminCollapsed: boolean = true;
   isUniversityCollapsed = true;
+  isSuperAdminCollapsed: boolean = true;
 
   title = 'crs-front-end';
+
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminMenu = false;
+  showStudentMenu = false;
+  showVisaMenu = false;
+  showApplicationMenu = false;
+  showAccountMenu = false;
+  showSuperAdminMenu = false;
+  username: string;
+  organizationName: string;
 
   toggleCollapsed() {
     this.iscollapsed = !this.iscollapsed;
@@ -102,4 +117,37 @@ export class AppComponent {
         this.isApplicationCollapsed = true;
       }
     }
+
+  toggleSuperAdminCollapsed() {
+    this.isSuperAdminCollapsed = !this.isSuperAdminCollapsed;
+  }
+/* Rols Validation */
+  constructor(private tokenStorageService: TokenStorageService) { }
+
+  ngOnInit() {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminMenu = this.roles.includes('ROLE_ADMIN');
+      this.showStudentMenu = this.roles.includes('ROLE_STUDENT');
+      this.showAccountMenu = this.roles.includes('ROLE_ACCOUNT');
+      this.showApplicationMenu = this.roles.includes('ROLE_APPLICATION');
+      this.showVisaMenu = this.roles.includes('ROLE_VISA');
+      this.showSuperAdminMenu = this.roles.includes('ROLE_SUPER_ADMIN');
+
+      this.username = user.username;
+      this.organizationName = user.organizationName;
+      console.log(this.username);
+      console.log(this.organizationName);
+    }
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
+
 }

@@ -66,6 +66,7 @@ import { BulkUploadUniversityComponent } from './university/bulk-upload-universi
 import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
 import { ViewVisaComponent } from './visa-manager/view-visa/view-visa.component';
 
+
 const matModules = [
   MatToolbarModule,
     MatIconModule,
