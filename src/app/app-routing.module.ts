@@ -65,7 +65,8 @@ import {SmsTemplateComponent} from './admin/sms-template/sms-template.component'
 import {EmailTemplateComponent} from './admin/email-template/email-template.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path:'login',component:LoginComponent},
   { path:'dashboard',component:DashboardComponent},
   { path:'calender',component:CalenderComponent },
   { path:'visa-manager',component:VisaManagerComponent },
