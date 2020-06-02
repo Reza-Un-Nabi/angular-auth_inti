@@ -50,7 +50,7 @@ import {AgentInvoiceComponent} from './accounts/agentInvoice/agent-invoice/agent
 import {VisaInvoiceComponent} from './accounts/visaInvoice/visa-invoice/visa-invoice.component';
 
   /* Payment */
-  import {AddPaymentComponent} from './accounts/payments/add-payment/add-payment.component';
+import {AddPaymentComponent} from './accounts/payments/add-payment/add-payment.component';
 import {PaymentComponent} from './accounts/payments/payment/payment.component';
 
 /* Admin */
@@ -72,6 +72,12 @@ import { BulkUploadUniversityComponent } from './university/bulk-upload-universi
 
 /* Visa Manager */
 import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
+/* Super Admin */
+import {OrganizationComponent} from './super_admin/organization/organization.component';
+import {UserComponent} from './super_admin/user/user.component';
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -165,6 +171,11 @@ const routes: Routes = [
 
       /* Visa Manager */
     {path:'addVisa', component:AddVisaComponent},
+
+    /* Super Admin */
+
+    {path:'organization',component:OrganizationComponent},
+    {path:'organizationuser',component:UserComponent}
 ];
 
 @NgModule({

@@ -5,7 +5,7 @@
     </button>
     <h1>SimpleCRM</h1>
     <!-- <span class="menu-spacer"></span> -->
-    <div>
+    <div *ngIf="isLoggedIn">
           {{companyName}}<a mat-button (click)="logout()"> Logout </a>
     </div>
   </mat-toolbar-row>
@@ -110,8 +110,10 @@
 
       </div>
       <a mat-list-item (click)="toggleSuperAdminCollapsed()" *ngIf="showSuperAdminMenu"> Super Admin </a>
-
-
+      <div class="div-background" *ngIf="!isSuperAdminCollapsed">
+        <a  mat-list-item [routerLink]="'/organization'">Organization</a>
+        <a  mat-list-item [routerLink]="'/organizationuser'">Users</a>
+      </div>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 
     </mat-nav-list>

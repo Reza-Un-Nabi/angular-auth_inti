@@ -65,6 +65,9 @@ import { ViewUniversityComponent } from './university/view-university/view-unive
 import { BulkUploadUniversityComponent } from './university/bulk-upload-university/bulk-upload-university.component';
 import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
 import { ViewVisaComponent } from './visa-manager/view-visa/view-visa.component';
+import { OrganizationComponent } from './super_admin/organization/organization.component';
+import { UserComponent } from './super_admin/user/user.component';
+
 
 
 const matModules = [
@@ -133,12 +136,15 @@ const matModules = [
     UnivpendingInvoiceComponent,
     UnivpaidInvoiceComponent,
     UnivaddInvoiceComponent,
+
     LeadViewImportComponent,
     AddUniversityComponent,
     ViewUniversityComponent,
     BulkUploadUniversityComponent,
     AddVisaComponent,
-    ViewVisaComponent
+    ViewVisaComponent,
+    OrganizationComponent,
+    UserComponent
   ],
 
   entryComponents: [

@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {TokenStorageService} from './_services/token-storage.service'
 import { from } from 'rxjs';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -122,7 +123,7 @@ export class AppComponent implements OnInit{
     this.isSuperAdminCollapsed = !this.isSuperAdminCollapsed;
   }
 /* Rols Validation */
-  constructor(private tokenStorageService: TokenStorageService) { }
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -147,6 +148,7 @@ export class AppComponent implements OnInit{
 
   logout() {
     this.tokenStorageService.signOut();
+    //this.router.navigate(['/login']);
     window.location.reload();
   }
 
