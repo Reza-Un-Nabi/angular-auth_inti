@@ -26,17 +26,24 @@
     <table class="table table-striped">
         <thead>
             <tr>
+                <th>Sl No</th>
                 <th>name</th>
                 <th>email</th>
                 <th>address</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let organization of organizations">
+            <tr *ngFor="let organization of organizations let i=index;">
+                <td>{{i+1}}</td>
                 <td>{{organization.name}}</td>
                 <td>{{organization.email}}</td>
                 <td>{{organization.address}}</td>
-                <td><button class="btn btn-danger" (click)="deleteEmployee(employee)"> Delete Employee</button></td>
+                <td>
+                    <button (click)="deleteEmployee(organization)" color="primary" mat-mini-fab #button>
+                        <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+                      </button>
+                </td>
             </tr>
         </tbody>
     </table>
