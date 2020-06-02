@@ -50,7 +50,7 @@ import {AgentInvoiceComponent} from './accounts/agentInvoice/agent-invoice/agent
 import {VisaInvoiceComponent} from './accounts/visaInvoice/visa-invoice/visa-invoice.component';
 
   /* Payment */
-  import {AddPaymentComponent} from './accounts/payments/add-payment/add-payment.component';
+import {AddPaymentComponent} from './accounts/payments/add-payment/add-payment.component';
 import {PaymentComponent} from './accounts/payments/payment/payment.component';
 
 /* Admin */
@@ -63,6 +63,13 @@ import {BranchComponent} from './admin/branch/branch.component';
 import {PermissionComponent} from './admin/permission/permission.component';
 import {SmsTemplateComponent} from './admin/sms-template/sms-template.component';
 import {EmailTemplateComponent} from './admin/email-template/email-template.component';
+
+/* Super Admin */
+import {OrganizationComponent} from './super_admin/organization/organization.component';
+import {UserComponent} from './super_admin/user/user.component';
+
+
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -147,7 +154,13 @@ const routes: Routes = [
     {path:'addBranch', component:BranchComponent},
     {path:'addCheckList', component:CheckListComponent},
     {path:'addSmsTemplate', component:SmsTemplateComponent},
-    {path:'addEmailTemplate', component:EmailTemplateComponent}
+    {path:'addEmailTemplate', component:EmailTemplateComponent},
+
+
+    /* Super Admin */
+
+    {path:'organization',component:OrganizationComponent},
+    {path:'organizationuser',component:UserComponent}
 ];
 
 @NgModule({

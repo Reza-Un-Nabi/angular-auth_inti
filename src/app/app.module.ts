@@ -61,6 +61,8 @@ import { UnivFeatureInvoiceComponent } from './accounts/universityInvoice/univ-f
 import { UnivpendingInvoiceComponent } from './accounts/universityInvoice/univpending-invoice/univpending-invoice.component';
 import { UnivpaidInvoiceComponent } from './accounts/universityInvoice/univpaid-invoice/univpaid-invoice.component';
 import { UnivaddInvoiceComponent } from './accounts/universityInvoice/univadd-invoice/univadd-invoice.component';
+import { OrganizationComponent } from './super_admin/organization/organization.component';
+import { UserComponent } from './super_admin/user/user.component';
 
 
 const matModules = [
@@ -129,7 +131,9 @@ const matModules = [
     UnivFeatureInvoiceComponent,
     UnivpendingInvoiceComponent,
     UnivpaidInvoiceComponent,
-    UnivaddInvoiceComponent
+    UnivaddInvoiceComponent,
+    OrganizationComponent,
+    UserComponent
   ],
   
   entryComponents: [
