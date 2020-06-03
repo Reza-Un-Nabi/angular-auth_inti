@@ -84,19 +84,6 @@
       <a mat-list-item [routerLink]="'/create-activity'"> Users </a>
 
       <!-- Admin -->
-      <a mat-list-item (click)="toggleAdminCollapsed()"> Admin </a>
-      <div  class="div-background"  *ngIf="!isAdminCollapsed" >
-          <a mat-list-item [routerLink]="'/addCountry'">Add Country</a>
-          <a mat-list-item [routerLink]="'/addCourse'">Add Course</a>
-          <a mat-list-item [routerLink]="'/addSource'">Add Source</a>
-          <a mat-list-item [routerLink]="'/addBranch'">Add Branch</a>
-          <a mat-list-item [routerLink]="'/addPermission'">Permission</a>
-          <a mat-list-item [routerLink]="'/addCheckList'">Check List</a>
-          <a mat-list-item [routerLink]="'/addSmsTemplate'">Add SMS Template</a>
-          <a mat-list-item [routerLink]="'/addEmailTemplate'">Add Email Template</a>
-
-        </div>
-
       <a mat-list-item (click)="toggleAdminCollapsed()" *ngIf="showAdminMenu"> Admin </a>
       <div class="div-background" *ngIf="!isAdminCollapsed">
         <a mat-list-item [routerLink]="'/addCountry'">Add Country</a>
