@@ -12,7 +12,8 @@ export class HttpService {
     httpBearerHeader = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer' + this.tokenStoreService.getToken()
+           'Authorization': 'Bearer' + this.tokenStoreService.getToken()
+          
         })
     };
 
@@ -20,6 +21,7 @@ export class HttpService {
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
     getWithToken (url:any): Observable<any> {
+        
         return this.http.get<any>(this.URL+url,this.httpBearerHeader);
     }
 

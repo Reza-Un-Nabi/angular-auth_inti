@@ -14,6 +14,7 @@ export class OrganizationService {
   saveUrl = '/organization/add';
   getAllUrl ='/organization/getAllOrgniz';
   updateUrl = '/organization/update';
+  checkUrl = '/organization/checkOrganize';
  
 
   constructor(
@@ -29,5 +30,12 @@ export class OrganizationService {
   public getAll() {
 
     return this.httpService.getWithToken(this.getAllUrl);
+  }
+
+  public getOrganizationById (id: number) {
+    return this.httpService.getWithToken('/organization/'+id);
+  }
+  public checkOrganizeAuth () {
+    return this.httpService.getWithToken(this.checkUrl);
   }
 }    

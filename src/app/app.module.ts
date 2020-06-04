@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {  FormsModule, ReactiveFormsModule }    from '@angular/forms';
+import {FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule,MatInputModule ,MatListModule, MatButtonModule,MatMenuModule,MatTabsModule } from  '@angular/material';
