@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-country',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
+countryForm: FormGroup;
 
   constructor() { }
 
