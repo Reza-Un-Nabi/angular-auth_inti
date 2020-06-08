@@ -21,8 +21,8 @@ export class HttpService {
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
     getWithToken (url:any): Observable<any> {
-        let token = this.tokenStoreService.getToken();
-        console.log(token);
+       // let token = this.tokenStoreService.getToken();
+        //console.log(token);
         return this.http.get<any>(this.URL+url,this.httpBearerHeader);
     }
 

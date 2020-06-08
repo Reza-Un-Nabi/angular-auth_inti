@@ -30,7 +30,13 @@ export class CountryComponent implements OnInit {
     this.resetAddFormField();
   }
 
+  insertCountry(): void {
+    this.countryService.save(this.country).subscribe(data =>{
 
+    });
+    this.resetAddFormField();
+    this.getAllCountryList();
+  }
   getAllCountryList(): void {
     this.countryService.getAllCountry().subscribe(data=>{
         this.countries = data;

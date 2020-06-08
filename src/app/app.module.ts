@@ -83,8 +83,7 @@ const matModules = [
     MatPaginatorModule,
     MatSortModule,
     MatCheckboxModule,
-    MatDialogModule,
-    MatIconModule
+    MatDialogModule
 ];
 
 @NgModule({
