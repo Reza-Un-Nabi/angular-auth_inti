@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Organization } from '../models/organization';
-import { HttpService } from '../_services/http.service';
+import { Organization } from '../../models/organization';
+import { HttpService } from '../http.service';
 
 
 

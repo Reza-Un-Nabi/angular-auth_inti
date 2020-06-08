@@ -12,7 +12,7 @@ export class HttpService {
     httpBearerHeader = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
-           'Authorization': 'Bearer' + this.tokenStoreService.getToken()
+           'Authorization': 'Bearer ' + this.tokenStoreService.getToken()
           
         })
     };
@@ -21,12 +21,14 @@ export class HttpService {
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
     getWithToken (url:any): Observable<any> {
-        
+        let token = this.tokenStoreService.getToken();
+        console.log(token);
         return this.http.get<any>(this.URL+url,this.httpBearerHeader);
     }
 
     postWithToken (url:any,data:any): Observable<any> {
-        let token = this.tokenStoreService.getToken();
+        //let token = this.tokenStoreService.getToken();
+        //console.log(token);
         return this.http.post(this.URL+url,data,this.httpBearerHeader);
     }
 

@@ -4,7 +4,7 @@
 
   <form [formGroup]="countryForm">
     <div class="form-group">
-      <input type="name" [(ngModel)]="organization.name" formControlName="name" placeholder="Enter Organization Name" class="form-control"
+      <input type="name" [(ngModel)]="country.name" formControlName="name" placeholder="Enter Organization Name" class="form-control"
              id="name" required>
     </div>
 
@@ -12,4 +12,27 @@
     <button class="btn btn-success" (click)="insertOrganization()">Create</button>
   </form>
 
+</div>
+
+<!-- Organization List -->
+<div class="col-md-9">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th>Sl No</th>
+              <th>name</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let count of countries let i=index;">
+              <td>{{i+1}}</td>
+              <td>{{count.name}}</td>
+              <td>
+                  <button (click)="getOrganizationById(count.id)" color="primary" data-target="#myModal" mat-mini-fab #button>
+                      <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+                  </button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
 </div>

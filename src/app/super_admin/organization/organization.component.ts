@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {OrganizationService} from '../../_services/organization.service';
+import {OrganizationService} from '../../_services/module_service/organization.service';
 import {Organization} from '../../models/organization';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
