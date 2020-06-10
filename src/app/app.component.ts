@@ -148,7 +148,7 @@ export class AppComponent implements OnInit{
 
   logout() {
     this.tokenStorageService.signOut();
-    //this.router.navigate(['/login']);
+   // this.router.navigate(['http://localhost:4200/']);
     window.location.reload();
   }
 

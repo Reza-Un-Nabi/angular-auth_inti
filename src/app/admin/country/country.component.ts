@@ -3,7 +3,7 @@ import { CountryService } from '../../_services/module_service/country.service';
 import { Country } from '../../models/country';
 import { Observable } from 'rxjs';
 import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
-
+import {MessageService} from '../../_services/message.service';
 
 @Component({
   selector: 'app-country',
@@ -20,7 +20,8 @@ export class CountryComponent implements OnInit {
 
   constructor(
     private countryService: CountryService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private messageService: MessageService
   ) {
     this.country = new Country;
   }
@@ -31,16 +32,23 @@ export class CountryComponent implements OnInit {
   }
 
   insertCountry(): void {
-    this.countryService.save(this.country).subscribe(data =>{
-
+    this.countryService.save(this.country).subscribe(res =>{
+      this.messageService.add(res.message);
+      
+      if(res.status=='ok'){
+        this.getAllCountryList();
+        this.resetAddFormField();
+      }
     });
-    this.resetAddFormField();
-    this.getAllCountryList();
+   
+   
+    
   }
   getAllCountryList(): void {
     this.countryService.getAllCountry().subscribe(data=>{
         this.countries = data;
     });
+    
   }
 
     // get Organization by id

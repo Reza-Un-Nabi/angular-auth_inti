@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage() {
-     //this.router.navigate(['/dashboard']);
+    //this.router.navigate(['/dashboard']);
     window.location.reload();
   }
 
