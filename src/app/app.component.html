@@ -5,9 +5,25 @@
     </button>
     <h1>SimpleCRM</h1>
     <!-- <span class="menu-spacer"></span> -->
-    <div *ngIf="isLoggedIn">
-          {{companyName}}<a mat-button (click)="logout()"> Logout </a>
-    </div>
+    
+    <mat-list class="my-nav-list">
+      <mat-list-item *ngIf="isLoggedIn" class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          welcome, {{username}} <i class="fas fa-user fa-fw"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+
+          <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+
+        </div>
+      </mat-list-item>
+      <mat-list-item *ngIf="!isLoggedIn">
+        <a class="nav-link" role="button" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+      </mat-list-item>
+    </mat-list>
   </mat-toolbar-row>
 
   <mat-toolbar-row style="height: 20px;">
@@ -73,7 +89,7 @@
 
       <!-- University Collaps -->
       <a mat-list-item (click)="toggleUniversityCollapsed()"> Univesity </a>
-      <div class="div-background"  *ngIf="!isUniversityCollapsed">
+      <div class="div-background" *ngIf="!isUniversityCollapsed">
         <a mat-list-item [routerLink]="'/addUniversity'">Add University</a>
         <a mat-list-item [routerLink]="'/viewUniversity'">View University </a>
         <a mat-list-item [routerLink]="'/bulkUploadUniversity'">Bulk Upload</a>
@@ -98,8 +114,8 @@
       </div>
       <a mat-list-item (click)="toggleSuperAdminCollapsed()" *ngIf="showSuperAdminMenu"> Super Admin </a>
       <div class="div-background" *ngIf="!isSuperAdminCollapsed">
-        <a  mat-list-item [routerLink]="'/organization'">Organization</a>
-        <a  mat-list-item [routerLink]="'/organizationuser'">Users</a>
+        <a mat-list-item [routerLink]="'/organization'">Organization</a>
+        <a mat-list-item [routerLink]="'/organizationuser'">Users</a>
       </div>
       <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
 

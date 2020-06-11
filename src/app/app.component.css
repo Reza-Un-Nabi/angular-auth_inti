@@ -17,3 +17,7 @@
 .mat-list-item:hover {
     background-color: yellow;
   }
+  .my-nav-list {
+    display: flex;
+    flex-direction: row;
+  }
