@@ -143,13 +143,19 @@ export class AppComponent implements OnInit{
       this.organizationName = user.organizationName;
       console.log(this.username);
       console.log(this.organizationName);
+      if (this.isLoggedIn == true) {
+        this.router.navigate(['/dashboard']);
+      }
+    }else{
+      this.router.navigate(['/login']);
     }
   }
 
   logout() {
     this.tokenStorageService.signOut();
-    //this.router.navigate(['/login']);
     window.location.reload();
   }
+
+  
 
 }

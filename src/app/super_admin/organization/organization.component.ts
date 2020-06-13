@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgModule } from '@angular/core';
+import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
 import {OrganizationService} from '../../_services/module_service/organization.service';
 import {Organization} from '../../models/organization';
 import { Observable } from 'rxjs';
-import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
+import {MessageService} from '../../_services/message.service';
+
 
 @Component({
   selector: 'app-organization',
@@ -20,7 +22,9 @@ isupdated = false;
 
   constructor(
     private organaigationService: OrganizationService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private formsModule: FormsModule,
+    private messageService: MessageService
     ) { 
     this.organization = new Organization;
   }
@@ -34,8 +38,13 @@ isupdated = false;
   }
   insertOrganization(): void {
     
-    this.organaigationService.save(this.organization).subscribe(data => {
-
+    this.organaigationService.save(this.organization).subscribe(res => {
+      this.messageService.add(res.message);
+      
+      if(res.status=='ok'){
+        this.getAllOrganizationList();
+        this.resetAddFormField();
+      }
     });
     this.resetAddFormField();
     //get Organization list

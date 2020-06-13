@@ -67,6 +67,7 @@ import { AddVisaComponent } from './visa-manager/add-visa/add-visa.component';
 import { ViewVisaComponent } from './visa-manager/view-visa/view-visa.component';
 import { OrganizationComponent } from './super_admin/organization/organization.component';
 import { UserComponent } from './super_admin/user/user.component';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -144,7 +145,8 @@ const matModules = [
     AddVisaComponent,
     ViewVisaComponent,
     OrganizationComponent,
-    UserComponent
+    UserComponent,
+    MessageComponent
   ],
 
   entryComponents: [

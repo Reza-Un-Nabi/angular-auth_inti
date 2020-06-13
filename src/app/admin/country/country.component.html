@@ -1,10 +1,10 @@
 <!-- Add Form -->
-<div class="col-md-6">
+<div class="col-md-4">
   <h2 class="text-center">Add Country</h2>
 
   <form [formGroup]="countryForm">
     <div class="form-group">
-      <input type="name" [(ngModel)]="country.name" formControlName="name" placeholder="Enter Organization Name" class="form-control"
+      <input type="name" [(ngModel)]="country.name" formControlName="name" placeholder="Enter Country Name" class="form-control"
              id="name" required>
     </div>
 
@@ -14,8 +14,8 @@
 
 </div>
 
-<!-- Organization List -->
-<div class="col-md-9">
+<!-- Country List -->
+<div class="col-md-6">
   <table class="table table-striped">
       <thead>
           <tr>
