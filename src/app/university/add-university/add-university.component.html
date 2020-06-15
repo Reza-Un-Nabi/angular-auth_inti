@@ -5,7 +5,10 @@
   <div class="form-row">
     <div class="col-md-4 mb-3">
       <label for="countryId">Country</label>
-      <input type="text" [(ngModel)]="university.countryId" formControlName="countryId" class="form-control" id="countryId" placeholder="Country name"  required>
+      <select  [(ngModel)]="university.countryId"  formControlName="countryId" id="countryId" class="form-control">
+        <option  [value]="country.id" *ngFor="let country of countries">{{country.name}}</option>
+      </select>
+<!--      <input type="text" [(ngModel)]="university.countryId" formControlName="countryId" class="form-control" id="countryId" placeholder="Country name"  required>-->
     </div>
     <div class="col-md-4 mb-3">
       <label for="uniName">University name</label>

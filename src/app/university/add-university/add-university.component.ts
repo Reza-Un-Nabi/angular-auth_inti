@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { University } from '../../models/university';
 import { UniversityService } from '../../_services/module_service/university.service';
 import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@angular/forms';
+import { CountryService } from '../../_services/module_service/country.service';
+import { Country } from '../../models/country';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-add-university',
@@ -11,16 +14,20 @@ import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@a
 export class AddUniversityComponent implements OnInit {
 universityForm: FormGroup;
 university: University;
+countries: Observable<Country[]>;
 
     constructor(
       private universityService: UniversityService,
+      private countryService: CountryService,
       private formBuilder: FormBuilder
     ) {
       this.university = new University;
+
     }
 
   ngOnInit() {
    this.resetAddFormField();
+   this.getAllCountryList();
   }
 
   insertUniversity(): void {
@@ -29,7 +36,6 @@ university: University;
 
     });
       this.resetAddFormField();
-//     this.getAllCountryList();
   }
 
    //reset Organization Form Field
@@ -42,4 +48,11 @@ university: University;
         countryId: ['']
       });
     }
+
+     getAllCountryList(): void {
+          this.countryService.getAllCountry().subscribe(data=>{
+              this.countries = data;
+          });
+
+        }
 }
