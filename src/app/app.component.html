@@ -1,13 +1,10 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row style="height: 20px;">
-    <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()" *ngIf="showAdminMenu || showStudentMenu|| showSuperAdminMenu">menu</mat-icon>
-    </button>
     <h1>SimpleCRM</h1>
     <!-- <span class="menu-spacer"></span> -->
     
-    <mat-list class="my-nav-list">
-      <mat-list-item *ngIf="isLoggedIn" class="nav-item dropdown">
+    <ul class="navbar-nav navbar-right">
+      <li *ngIf="isLoggedIn" class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           welcome, {{username}} <i class="fas fa-user fa-fw"></i>
@@ -19,11 +16,11 @@
           <a class="dropdown-item" (click)="logout()">Logout</a>
 
         </div>
-      </mat-list-item>
-      <mat-list-item *ngIf="!isLoggedIn">
+      </li>
+      <li *ngIf="!isLoggedIn">
         <a class="nav-link" role="button" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-      </mat-list-item>
-    </mat-list>
+      </li>
+    </ul>
   </mat-toolbar-row>
 
   <mat-toolbar-row style="height: 20px;">
