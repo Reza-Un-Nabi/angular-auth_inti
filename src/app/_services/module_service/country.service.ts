@@ -29,4 +29,8 @@ export class CountryService {
   public getCountryById(id: number) {
     return this.httpService.getWithToken('/country/' + id);
   }
+
+  public updateCountry(country: Country) {
+    return this.httpService.postWithToken(this.updateCountryUrl,country);
+  }
 }  

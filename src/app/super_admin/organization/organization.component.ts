@@ -22,6 +22,7 @@ organizations: Observable<Organization[]>;
 organizationForm: FormGroup;
 organizationList:any;
 isupdated = false;
+updateMessage: any;
 
   constructor(
     private organaigationService: OrganizationService,
@@ -104,6 +105,7 @@ updateOrg() {
    
     if(res.status=='ok'){
       this.isupdated = true;
+      this.updateMessage = res.message;
       this.getAllOrganizationList();
     }
     
