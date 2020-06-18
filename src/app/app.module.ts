@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatToolbarModule, MatIconModule, MatSidenavModule,MatInputModule ,MatListModule, MatButtonModule,MatMenuModule,MatTabsModule } from  '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -157,9 +158,11 @@ const matModules = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+   
     matModules
 
   ],

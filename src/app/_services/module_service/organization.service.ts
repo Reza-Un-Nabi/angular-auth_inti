@@ -35,6 +35,9 @@ export class OrganizationService {
   public getOrganizationById (id: number) {
     return this.httpService.getWithToken('/organization/'+id);
   }
+  public updateOrganization (organization: Organization) {
+    return this.httpService.postWithToken(this.updateUrl, organization);
+  }
   public checkOrganizeAuth () {
     return this.httpService.getWithToken(this.checkUrl);
   }
