@@ -21,6 +21,9 @@
     display: flex;
     flex-direction: row;
   }
-  .example-spacer{
+  .user-spacer{
       flex: 1 1 auto;
   }
+  .organization-spacer{
+    flex: auto 1 1;
+}

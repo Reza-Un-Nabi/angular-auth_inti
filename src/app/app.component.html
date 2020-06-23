@@ -4,8 +4,14 @@
       <mat-icon (click)="sidenav.toggle()" *ngIf="showAdminMenu || showStudentMenu|| showSuperAdminMenu">menu</mat-icon>
     </button>
     <h1>SimpleCRM</h1>
-    <!--this span for spaceing reight-->
-    <span class="example-spacer"></span>
+     <!-- this span for spaceing reight of org -->
+     <span class="organization-spacer"></span>
+     <span flex></span>
+     <h1 >{{organizationName}}</h1>
+    <span class="organization-spacer"></span>
+    <span flex></span>
+    <!--this span for spaceing reight of user-->
+    <span class="user-spacer"></span>
     <span flex></span>
     <mat-list>
       <mat-list-item  *ngIf="isLoggedIn" class="nav-item dropdown">

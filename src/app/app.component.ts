@@ -141,8 +141,7 @@ export class AppComponent implements OnInit{
 
       this.username = user.username;
       this.organizationName = user.organizationName;
-      console.log(this.username);
-      console.log(this.organizationName);
+     
       if (this.isLoggedIn == true) {
         this.router.navigate(['/dashboard']);
       }
