@@ -1,1 +1,74 @@
-<p>user works!</p>
+<!-- Add Form -->
+<div class="col-md-6">
+  <h2 class="text-center">Add Admin User</h2>
+  <form [formGroup]="adminUserForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name"
+        [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.firstName.errors }" />
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.firstName.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.firstName.errors.required">First Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name"
+        [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.lastName.errors }" />
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.lastName.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.lastName.errors.required">Last Name is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="email" formControlName="email" class="form-control" placeholder="Enter Email"
+        [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.email.errors }" />
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.email.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.email.errors.required">Email is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" formControlName="password" class="form-control" placeholder="Enter Password"
+        [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.password.errors }" />
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.password.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.password.errors.required">Password is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="password" formControlName="confirm_password" class="form-control" placeholder="Enter Confirm Password"
+        [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.confirm_password.errors }" />
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.confirm_password.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.confirm_password.errors.required">Confirm Password is required</div>
+        <div *ngIf="adminUserForm.controls.confirm_password.errors.confirmedValidator">Password & Confirm-password must match</div>
+      </div>
+    </div>
+
+    <button class="btn btn-success" (click)="insertUserAdmin()">Create</button>
+  </form>
+</div>
+<!-- User List -->
+<!-- <div class="col-md-9">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sl No</th>
+          <th>name</th>
+          <th>email</th>
+          <th>address</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let organization of organizations let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{organization.name}}</td>
+          <td>{{organization.email}}</td>
+          <td>{{organization.address}}</td>
+          <td>
+            <button (click)="getOrganizationById(organization.id)" color="primary" (click)="open(mymodal)" mat-mini-fab
+              #button>
+              <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ -->
