@@ -82,12 +82,11 @@ export class UserComponent implements OnInit {
     let role = 'admin';
     arr.push(role);
     this.adminUserForm.controls['role'].patchValue(arr);
-    console.log(this.adminUserForm.value);
+  
     this.adminUserService.saveUser(this.adminUserForm.value).subscribe(res =>{
       this.messageService.add(res.message);
-      if(res.status=='ok'){
+        this.getAllAdminUser();
         this.resetAddFormField();
-      }
     })
   }
 
@@ -95,7 +94,6 @@ export class UserComponent implements OnInit {
 getAllAdminUser():void {
   this.adminUserService.getAllAdminUser().subscribe(res =>{
     this.adminUserList = res;
-    console.log(this.adminUserList);
   })
 }
 
