@@ -16,6 +16,8 @@ export class UserComponent implements OnInit {
   submitted = false;
   adminUser: AdminUser;
   organizations: Observable<Organization[]>; 
+  adminUserList: Observable<AdminUser[]>;
+  
   constructor(
     private formBuilder: FormBuilder,
     private adminUserService: AdminUserService,
@@ -27,7 +29,8 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     //get all organization
     this.getAllOrganization();
-    
+    //alladmin user
+    this.getAllAdminUser();
     // form validation
     this.adminUserForm = this.formBuilder.group({
       role: [''],
@@ -59,24 +62,22 @@ export class UserComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    this.submitted = true;
-
-    // stop here if form is invalid
-    if (this.adminUserForm.invalid) {
-      return;
-    }
-  }
 
   //get all organization
   getAllOrganization ():void {
     this.adminUserService.getAllOrganization().subscribe(res =>{
       this.organizations =res;
-      console.log(this.organizations);
     })
   }
   /* insert Admin User */
   insertUserAdmin():void {
+
+    // stop here if form is invalid
+    this.submitted = true;
+    if (this.adminUserForm.invalid) {
+      return;
+    }
+    //create role array
     let arr = [];
     let role = 'admin';
     arr.push(role);
@@ -89,6 +90,16 @@ export class UserComponent implements OnInit {
       }
     })
   }
+
+//get all Admin User
+getAllAdminUser():void {
+  this.adminUserService.getAllAdminUser().subscribe(res =>{
+    this.adminUserList = res;
+    console.log(this.adminUserList);
+  })
+}
+
+
 //reset Admin User Form Field
 resetAddFormField () {
   this.adminUserForm = this.formBuilder.group({

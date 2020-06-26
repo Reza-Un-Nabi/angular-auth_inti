@@ -1,12 +1,16 @@
 <!-- Add Form -->
 <div class="col-md-6">
   <h2 class="text-center">Add Admin User</h2>
-  <form [formGroup]="adminUserForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="adminUserForm" >
     <input type="hidden"  formControlName="role" />
     <div class="form-group">
-      <select id="organizationId" class="form-control" formControlName="organizationId">
+      <select id="organizationId" class="form-control" formControlName="organizationId"
+      [ngClass]="{ 'is-invalid': submitted &amp;&amp; adminUserForm.controls.organizationId.errors }">
         <option *ngFor="let org of organizations" value="{{org.id}}">{{org.name}}</option>
       </select>
+      <div *ngIf="submitted &amp;&amp; adminUserForm.controls.organizationId.errors" class="text-danger">
+        <div *ngIf="adminUserForm.controls.organizationId.errors.required">Organization is required</div>
+      </div>
     </div>
     <div class="form-group">
       <input type="text" formControlName="firstName"  class="form-control" placeholder="Enter First Name"
@@ -58,31 +62,35 @@
   </form>
 </div>
 <!-- User List -->
-<!-- <div class="col-md-9">
+<div class="col-md-9">
     <table class="table table-striped">
       <thead>
         <tr>
           <th>Sl No</th>
-          <th>name</th>
+          <th>First Name</th>
+          <th>Last Name</th>
           <th>email</th>
-          <th>address</th>
-          <th>Edit</th>
+          <th>Organization</th>
+          <th>User Name</th>
+          <th>Created Date</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let organization of organizations let i=index;">
+        <tr *ngFor="let ad of adminUserList let i=index;">
           <td>{{i+1}}</td>
-          <td>{{organization.name}}</td>
-          <td>{{organization.email}}</td>
-          <td>{{organization.address}}</td>
-          <td>
+          <td>{{ad.firstName}}</td>
+          <td>{{ad.lastName}}</td>
+          <td>{{ad.email}}</td>
+          <td>{{ad.organization}}</td>
+          <td>{{ad.username}}</td>
+          <td>{{ad.createdDate}}</td>
+         <!--  <td>
             <button (click)="getOrganizationById(organization.id)" color="primary" (click)="open(mymodal)" mat-mini-fab
               #button>
               <mat-icon aria-label="" name='skill1'>edit</mat-icon>
             </button>
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>
   </div>
- -->
