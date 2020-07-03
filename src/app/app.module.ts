@@ -4,7 +4,8 @@ import {FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { MatToolbarModule, MatIconModule, MatSidenavModule,MatInputModule ,MatListModule, MatButtonModule,MatMenuModule,MatTabsModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule,MatInputModule ,MatListModule, 
+         MatButtonModule,MatMenuModule,MatTabsModule,MatSliderModule } from  '@angular/material';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
@@ -85,7 +86,8 @@ const matModules = [
     MatPaginatorModule,
     MatSortModule,
     MatCheckboxModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule
 ];
 
 @NgModule({

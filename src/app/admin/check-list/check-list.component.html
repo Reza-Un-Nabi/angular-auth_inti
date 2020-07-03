@@ -1,1 +1,71 @@
-<p>check-list works!</p>
+<!-- Add Form -->
+<div class="col-md-5">
+    <h2 class="text-center">Add CheckList</h2>
+    <form [formGroup]="checklistForm" >
+      <div class="form-group">
+        <input type="text" formControlName="name"  class="form-control" placeholder="Enter CheckList Name"
+          [ngClass]="{ 'is-invalid': submitted &amp;&amp; checklistForm.controls.name.errors }" />
+        <div *ngIf="submitted &amp;&amp; checklistForm.controls.name.errors" class="text-danger">
+          <div *ngIf="checklistForm.controls.name.errors.required">CheckList Name is required</div>
+        </div>
+      </div>
+      <button class="btn btn-success" (click)="insertCheckList()">Create</button>
+    </form>
+</div>    
+
+<!-- Branch List -->
+<div class="col-md-6">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sl No</th>
+          <th>name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let count of checklistList let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{count.name}}</td>
+          <td>
+            <button (click)="getCheckListById(count.id)" color="primary" (click)="open(checklisthmodal)" mat-mini-fab
+              #button>
+              <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Branch Update Popup -->
+<ng-template #checklisthmodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Source Popup</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="updateChecklistForm" #updstu (ngSubmit)="updateCheckListValue()">
+        <div class="modal-body" *ngFor="let bra of checklistValue ">
+          <input type="hidden" class="form-control" formControlName="bra_id" [(ngModel)]="bra.id">
+          <div class="form-group">
+            <label for="name">CheckList Name</label>
+            <input type="text" class="form-control" formControlName="bra_name" [(ngModel)]="bra.name"
+            [ngClass]="{ 'is-invalid': updateSubmitted &amp;&amp; updateChecklistForm.controls.bra_name.errors }" >
+            <div *ngIf="updateSubmitted &amp;&amp; updateChecklistForm.controls.bra_name.errors" class="text-danger">
+              <div *ngIf="updateChecklistForm.controls.bra_name.errors.required">CheckList Name is required</div>
+            </div>
+          </div>
+          <div *ngIf="isupdated">
+            <p class="text-success">{{updateMessage}}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Ok</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+  </ng-template>
+

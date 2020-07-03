@@ -39,8 +39,8 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav #sidenav>
+<mat-sidenav-container class="sidenav_container">
+  <mat-sidenav #sidenav mode="side">
 
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/dashboard'"> Dashboard </a>
@@ -129,7 +129,7 @@
 
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content style="padding: 25px" >
     <div style="height: 88vh;">
       <app-message></app-message>
       <router-outlet></router-outlet>
