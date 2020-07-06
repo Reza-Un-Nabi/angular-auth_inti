@@ -1,1 +1,47 @@
-<p>sms-template works!</p>
+<!-- Add Form -->
+<div class="col-md-5">
+    <h2 class="text-center">Add SMS Template</h2>
+    <form [formGroup]="smstemplateForm" >
+      <div class="form-group">
+        <input type="text" formControlName="title"  class="form-control" placeholder="Enter SMS Title"
+          [ngClass]="{ 'is-invalid': submitted &amp;&amp; smstemplateForm.controls.title.errors }" />
+        <div *ngIf="submitted &amp;&amp; smstemplateForm.controls.title.errors" class="text-danger">
+          <div *ngIf="smstemplateForm.controls.title.errors.required">SMS Title is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea type="text" formControlName="body"  class="form-control" placeholder="Enter SMS Body"
+          [ngClass]="{ 'is-invalid': submitted &amp;&amp; smstemplateForm.controls.body.errors }"></textarea>
+        <div *ngIf="submitted &amp;&amp; smstemplateForm.controls.body.errors" class="text-danger">
+          <div *ngIf="smstemplateForm.controls.body.errors.required">SMS Body is required</div>
+        </div>
+      </div>
+      <button class="btn btn-success" (click)="insertSmsTemp()">Create</button>
+    </form>
+</div>    
+
+<!-- Sms Template List -->
+<div class="col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sl No</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let count of smsTempList let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{count.title}}</td>
+          <td>{{count.body}}</td>
+          <td>
+            <button (click)="getCheckListById(count.id)" color="primary" (click)="open(checklisthmodal)" mat-mini-fab
+              #button>
+              <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

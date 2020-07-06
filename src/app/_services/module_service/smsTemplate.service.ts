@@ -6,7 +6,7 @@ import { HttpService } from '../http.service';
     providedIn: 'root'
 })
 
-export class BranchService {
+export class SmsTemplateService {
 
     addhUrl = '/smsTemplate/add';
     getByIdUrl = '/smsTemplate/get';

@@ -19,7 +19,7 @@
       <thead>
         <tr>
           <th>Sl No</th>
-          <th>name</th>
+          <th>Name</th>
         </tr>
       </thead>
       <tbody>
@@ -47,7 +47,7 @@
     </div>
     <div class="modal-body">
       <form [formGroup]="updateChecklistForm" #updstu (ngSubmit)="updateCheckListValue()">
-        <div class="modal-body" *ngFor="let bra of checklistValue ">
+        <div class="modal-body" *ngFor="let bra of checklistValueById ">
           <input type="hidden" class="form-control" formControlName="bra_id" [(ngModel)]="bra.id">
           <div class="form-group">
             <label for="name">CheckList Name</label>

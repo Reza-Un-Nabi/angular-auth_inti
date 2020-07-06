@@ -16,7 +16,7 @@ export class CheckListComponent implements OnInit {
   checklistForm: FormGroup;
   submitted = false;
   checkList: CheckList;
-  checklistValue: any;
+  checklistValueById: any;
   checklistList: Observable<CheckList[]>;
   updateSubmitted = false;
   updateMessage: any;
@@ -77,7 +77,7 @@ export class CheckListComponent implements OnInit {
   getCheckListById(id: number) {
 
     this.checklistService.getCheckListById(id).subscribe(data => {
-      this.checklistValue = data;
+      this.checklistValueById = data;
     });
   }
 

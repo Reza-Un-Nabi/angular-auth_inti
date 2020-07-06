@@ -1,1 +1,47 @@
-<p>email-template works!</p>
+<!-- Add Form -->
+<div class="col-md-5">
+    <h2 class="text-center">Add Email Template</h2>
+    <form [formGroup]="emailtemplateForm" >
+      <div class="form-group">
+        <input type="text" formControlName="title"  class="form-control" placeholder="Enter Email Title"
+          [ngClass]="{ 'is-invalid': submitted &amp;&amp; emailtemplateForm.controls.title.errors }" />
+        <div *ngIf="submitted &amp;&amp; emailtemplateForm.controls.title.errors" class="text-danger">
+          <div *ngIf="emailtemplateForm.controls.title.errors.required">Email Title is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea type="text" formControlName="body"  class="form-control" placeholder="Enter Email Body"
+          [ngClass]="{ 'is-invalid': submitted &amp;&amp; emailtemplateForm.controls.body.errors }"></textarea>
+        <div *ngIf="submitted &amp;&amp; emailtemplateForm.controls.body.errors" class="text-danger">
+          <div *ngIf="emailtemplateForm.controls.body.errors.required">Email Body is required</div>
+        </div>
+      </div>
+      <button class="btn btn-success" (click)="insertEmailTemp()">Create</button>
+    </form>
+</div>    
+
+<!-- Sms Template List -->
+<div class="col-md-8">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Sl No</th>
+          <th>Title</th>
+          <th>Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let count of emailTempList let i=index;">
+          <td>{{i+1}}</td>
+          <td>{{count.title}}</td>
+          <td>{{count.body}}</td>
+          <td>
+            <button (click)="getCheckListById(count.id)" color="primary" (click)="open(checklisthmodal)" mat-mini-fab
+              #button>
+              <mat-icon aria-label="" name='skill1'>edit</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
