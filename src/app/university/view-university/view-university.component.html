@@ -1,1 +1,13 @@
 <p>view-university works!</p>
+
+<!-- Add Form -->
+<div class="col-md-4">
+  <h2 class="text-center">Add Country</h2>
+
+  <form [formGroup]="countryViewForm">
+    <select formControlName="countryControl">
+      <option [value]="country" *ngFor="let country of countries">{{country.name}}</option>
+    </select>
+  </form>
+
+</div>

@@ -1,35 +1,41 @@
 <div class="div-position">
   <p>Add University</p>
-<form>
+
+  <form [formGroup]="universityForm">
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="country">Country</label>
-      <input type="text" class="form-control" id="country" placeholder="Country name"  required>
+      <label for="countryId">Country</label>
+      <select  [(ngModel)]="university.countryId"  formControlName="countryId" id="countryId" class="form-control">
+        <option  [value]="country.id" *ngFor="let country of countries">{{country.name}}</option>
+      </select>
+<!--      <input type="text" [(ngModel)]="university.countryId" formControlName="countryId" class="form-control" id="countryId" placeholder="Country name"  required>-->
     </div>
     <div class="col-md-4 mb-3">
-      <label for="universityName">University name</label>
-      <input type="text" class="form-control" id="universityName" placeholder="University name" required>
+      <label for="uniName">University name</label>
+      <input type="text" [(ngModel)]="university.uniName" formControlName="uniName" class="form-control" id="uniName" placeholder="University name" required>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="universityWebsite">University Website</label>
+      <label for="uniwebSite">University Website</label>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend2">WWW</span>
         </div>
-        <input type="text" class="form-control" id="universityWebsite" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+        <input type="text" [(ngModel)]="university.uniwebSite" formControlName="uniwebSite" class="form-control" id="uniwebSite" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
       </div>
     </div>
   </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="universityEmail">Email</label>
-      <input type="text" class="form-control" id="universityEmail" placeholder="example@gmail.com" required>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="uniEmail">Email</label>
+        <input type="text" [(ngModel)]="university.uniEmail" formControlName="uniEmail" class="form-control" id="uniEmail" placeholder="example@gmail.com" required>
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="uniContract">Contact</label>
+        <input type="text" [(ngModel)]="university.uniContract" formControlName="uniContract" class="form-control" id="uniContract" placeholder="contractNo" required>
+      </div>
     </div>
-    <div class="col-md-3 mb-3">
-      <label for="universityContact">Contact</label>
-      <input type="text" class="form-control" id="universityContact" placeholder="contractNo" required>
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Submit form</button>
+  <button class="btn btn-primary" (click)="insertUniversity()">Submit form</button>
 </form>
 </div>
+
