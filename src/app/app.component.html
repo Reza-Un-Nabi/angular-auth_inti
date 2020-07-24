@@ -43,11 +43,11 @@
   <mat-sidenav #sidenav mode="side">
 
     <mat-nav-list>
-      <a mat-list-item [routerLink]="'/dashboard'"> Dashboard </a>
-      <a mat-list-item [routerLink]="'/calender'"> Calender </a>
+      <a mat-list-item [routerLink]="'/dashboard'" *ngIf="showAdminMenu"> Dashboard </a>
+      <a mat-list-item [routerLink]="'/calender'" *ngIf="showAdminMenu"> Calender </a>
 
       <!-- Leads Collaps -->
-      <a mat-list-item (click)="toggleLeadsCollapsed()"> Leads Manager </a>
+      <a mat-list-item (click)="toggleLeadsCollapsed()" *ngIf="showAdminMenu"> Leads Manager </a>
       <div class="div-background" *ngIf="!isLeadscollapsed">
         <a mat-list-item [routerLink]="'/add-lead'"> Add Leads </a>
         <a mat-list-item [routerLink]="'/leadview'"> View Leads </a>
@@ -96,16 +96,16 @@
       </div>
 
       <!-- University Collaps -->
-      <a mat-list-item (click)="toggleUniversityCollapsed()"> Univesity </a>
+      <a mat-list-item (click)="toggleUniversityCollapsed()" *ngIf="showAdminMenu"> Univesity </a>
       <div class="div-background" *ngIf="!isUniversityCollapsed">
         <a mat-list-item [routerLink]="'/addUniversity'">Add University</a>
         <a mat-list-item [routerLink]="'/viewUniversity'">View University </a>
         <a mat-list-item [routerLink]="'/bulkUploadUniversity'">Bulk Upload</a>
       </div>
 
-      <a mat-list-item [routerLink]="'/create-contact'"> Patners </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Againts </a>
-      <a mat-list-item [routerLink]="'/create-activity'"> Users </a>
+      <a mat-list-item [routerLink]="'/create-contact'" *ngIf="showAdminMenu"> Patners </a>
+      <a mat-list-item [routerLink]="'/create-activity'" *ngIf="showAdminMenu"> Againts </a>
+      <a mat-list-item [routerLink]="'/create-activity'" *ngIf="showAdminMenu"> Users </a>
 
       <!-- Admin -->
       <a mat-list-item (click)="toggleAdminCollapsed()" *ngIf="showAdminMenu"> Admin </a>
@@ -116,8 +116,8 @@
         <a mat-list-item [routerLink]="'/addBranch'">Add Branch</a>
         <a mat-list-item [routerLink]="'/addPermission'">Permission</a>
         <a mat-list-item [routerLink]="'/addCheckList'">Check List</a>
-        <a mat-list-item [routerLink]="'/addSmsTemplate'">Add SMS Template</a>
-        <a mat-list-item [routerLink]="'/addEmailTemplate'">Add Email Template</a>
+        <a mat-list-item [routerLink]="'/addSmsTemplate'">SMS Template</a>
+        <a mat-list-item [routerLink]="'/addEmailTemplate'">Email Template</a>
 
       </div>
       <a mat-list-item (click)="toggleSuperAdminCollapsed()" *ngIf="showSuperAdminMenu"> Super Admin </a>
