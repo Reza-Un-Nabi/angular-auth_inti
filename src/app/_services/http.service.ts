@@ -12,31 +12,35 @@ export class HttpService {
     httpBearerHeader = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json',
-           'Authorization': 'Bearer ' + this.tokenStoreService.getToken()
-          
+            'Authorization': 'Bearer ' + this.tokenStoreService.getToken()
+
         })
     };
+    // AWS URL
+    URL = 'http://52.65.22.111:8085/api';
 
-    URL = 'http://localhost:8085/api';
+    //Local url
+    // URL = 'http://localhost:8085/api';
+
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
-    getWithToken (url:any): Observable<any> {
-       // let token = this.tokenStoreService.getToken();
+    getWithToken(url: any): Observable<any> {
+        // let token = this.tokenStoreService.getToken();
         //console.log(token);
-        return this.http.get<any>(this.URL+url,this.httpBearerHeader);
+        return this.http.get<any>(this.URL + url, this.httpBearerHeader);
     }
 
-    postWithToken (url:any,data:any): Observable<any> {
+    postWithToken(url: any, data: any): Observable<any> {
         //let token = this.tokenStoreService.getToken();
         //console.log(token);
-        return this.http.post(this.URL+url,data,this.httpBearerHeader);
+        return this.http.post(this.URL + url, data, this.httpBearerHeader);
     }
 
-    get(url:any):Observable<any>{
-        return this.http.get<any>(this.URL+url);
+    get(url: any): Observable<any> {
+        return this.http.get<any>(this.URL + url);
     }
 
-    post(url:any,data:any):Observable<any>{
-        return this.http.post(this.URL+url,data);
+    post(url: any, data: any): Observable<any> {
+        return this.http.post(this.URL + url, data);
     }
 }

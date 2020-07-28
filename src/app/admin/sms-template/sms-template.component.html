@@ -36,7 +36,7 @@
           <td>{{count.title}}</td>
           <td>{{count.body}}</td>
           <td>
-            <button (click)="getCheckListById(count.id)" color="primary" (click)="open(checklisthmodal)" mat-mini-fab
+            <button (click)="getSmsTeplateById(count.id)" color="primary"   mat-mini-fab
               #button>
               <mat-icon aria-label="" name='skill1'>edit</mat-icon>
             </button>
@@ -45,3 +45,44 @@
       </tbody>
     </table>
   </div>
+
+
+  <!-- SMS Template Update Popup -->
+<ng-template #smsTemplatemodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">SMS Template Popup</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="updateSmsTempForm" #updstu >
+      <div class="modal-body" *ngFor="let bra of smsValueById ">
+        <input type="hidden" class="form-control" formControlName="bra_id" [(ngModel)]="bra.id">
+        <div class="form-group">
+          <label for="title">SMS Title</label>
+          <input type="text" class="form-control" formControlName="bra_title" [(ngModel)]="bra.title"
+          [ngClass]="{ 'is-invalid': updateSubmitted &amp;&amp; updateSmsTempForm.controls.bra_title.errors }" >
+          <div *ngIf="updateSubmitted &amp;&amp; updateSmsTempForm.controls.bra_title.errors" class="text-danger">
+            <div *ngIf="updateSmsTempForm.controls.bra_title.errors.required">Branch Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="body">SMS Title</label>
+          <input type="text" class="form-control" formControlName="bra_body" [(ngModel)]="bra.body"
+          [ngClass]="{ 'is-invalid': updateSubmitted &amp;&amp; updateSmsTempForm.controls.bra_body.errors }" >
+          <div *ngIf="updateSubmitted &amp;&amp; updateSmsTempForm.controls.bra_body.errors" class="text-danger">
+            <div *ngIf="updateSmsTempForm.controls.bra_body.errors.required">Branch Name is required</div>
+          </div>
+        </div>
+        <div *ngIf="isupdated">
+          <p class="text-success">{{updateMessage}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Ok</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</ng-template>

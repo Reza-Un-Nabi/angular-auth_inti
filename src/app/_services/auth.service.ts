@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 /* Local URL */
 //const AUTH_API = 'http://localhost:8085/api/auth/';
 /* Cloud URL */
-const AUTH_API ='http://52.65.22.111:8085/api/auth/';
+const AUTH_API = 'http://52.65.22.111:8085/api/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
