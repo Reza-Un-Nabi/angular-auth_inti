@@ -17,7 +17,7 @@ export class HttpService {
         })
     };
     // AWS URL
-    URL = 'http://52.65.22.111:8085/api';
+    URL = 'http://13.239.3.46:8085/api';
 
     //Local url
     // URL = 'http://localhost:8085/api';
