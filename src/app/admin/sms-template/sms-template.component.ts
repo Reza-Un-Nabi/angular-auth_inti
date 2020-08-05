@@ -76,6 +76,7 @@ export class SmsTemplateComponent implements OnInit {
 
     this.smstemplateService.getSmsTemplateById(id).subscribe(data => {
       this.smsValueById = data;
+      console.log(this.smsValueById);
     });
   }
 
@@ -87,4 +88,55 @@ export class SmsTemplateComponent implements OnInit {
 
     });
   }
+ // form update validation
+ updateSmsTempForm = this.formBuilder.group({
+  bra_id: ['', [Validators.required]],
+  bra_title: ['', [Validators.required]],
+  bra_body: ['', [Validators.required]]
+});
+  /*  //update branch 
+   updateBranchValue() {
+    // stop here if form is invalid
+    this.updateSubmitted = true;
+    if (this.updateSmsTempForm.invalid) {
+      return;
+    }
+    this.updateSmsTemp = new SmsTemplate();
+    this.updateSmsTemp.id = this.updateSmsTempForm.get("bra_id").value;
+    this.updateSmsTemp.title = this.updateSmsTempForm.get("bra_name").value;
+    this.smstemplateService.up(this.updateSmsTemp).subscribe(res => {
+
+      if (res.status == 'ok') {
+        this.isupdated = true;
+        this.updateMessage = res.message;
+        this.getAllSmsTeplate();
+      } else if (res.status == 'failed') {
+        this.isupdated = true;
+        this.updateMessage = res.message;
+        this.getAllSmsTeplate();
+      }
+    });
+  } */
+
+  /* for popup OK,close Button */
+  open(content) {
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.isupdated = false;
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
+  }
+
+  /* end popup */
 }
