@@ -50,7 +50,7 @@
         <div class="modal-body" *ngFor="let bra of sourceValue ">
           <input type="hidden" class="form-control" formControlName="bra_id" [(ngModel)]="bra.id">
           <div class="form-group">
-            <label for="name">Branch Name</label>
+            <label for="name">Source Name</label>
             <input type="text" class="form-control" formControlName="bra_name" [(ngModel)]="bra.name"
             [ngClass]="{ 'is-invalid': updateSubmitted &amp;&amp; updateSourceForm.controls.bra_name.errors }" >
             <div *ngIf="updateSubmitted &amp;&amp; updateSourceForm.controls.bra_name.errors" class="text-danger">

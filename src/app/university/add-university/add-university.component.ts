@@ -5,6 +5,7 @@ import { FormBuilder, FormsModule, FormGroup, Validators, FormControl } from '@a
 import { CountryService } from '../../_services/module_service/country.service';
 import { Country } from '../../models/country';
 import { Observable } from 'rxjs';
+import {MessageService} from '../../_services/message.service';
 
 @Component({
   selector: 'app-add-university',
@@ -17,6 +18,7 @@ university: University;
 countries: Observable<Country[]>;
 
     constructor(
+      private messageService: MessageService,
       private universityService: UniversityService,
       private countryService: CountryService,
       private formBuilder: FormBuilder
@@ -33,9 +35,12 @@ countries: Observable<Country[]>;
   insertUniversity(): void {
   console.log(this.university);
     this.universityService.save(this.university).subscribe(data =>{
+      this.messageService.add(data.message);
+      if(data.status=='ok'){
+        this.resetAddFormField();
+      }
 
     });
-      this.resetAddFormField();
   }
 
    //reset Organization Form Field

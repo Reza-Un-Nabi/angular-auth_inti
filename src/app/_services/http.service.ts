@@ -20,13 +20,11 @@ export class HttpService {
     URL = 'http://13.239.3.46:8085/api';
 
     //Local url
-    // URL = 'http://localhost:8085/api';
+   //URL = 'http://localhost:8085/api';
 
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
     getWithToken(url: any): Observable<any> {
-        // let token = this.tokenStoreService.getToken();
-        //console.log(token);
         return this.http.get<any>(this.URL + url, this.httpBearerHeader);
     }
 
@@ -34,6 +32,10 @@ export class HttpService {
         //let token = this.tokenStoreService.getToken();
         //console.log(token);
         return this.http.post(this.URL + url, data, this.httpBearerHeader);
+    }
+
+    deleteWithToken(url: any): Observable<any> {
+        return this.http.delete(this.URL + url,this.httpBearerHeader);
     }
 
     get(url: any): Observable<any> {
