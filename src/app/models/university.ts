@@ -5,4 +5,5 @@ export class University{
     uniEmail: string;
     uniContract: string;
     countryId: number;
+    countryName: string;
 }

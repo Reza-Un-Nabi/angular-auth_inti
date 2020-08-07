@@ -51,6 +51,8 @@ export class CountryComponent implements OnInit {
   getAllCountryList(): void {
     this.countryService.getAllCountry().subscribe(data=>{
         this.countries = data;
+        console.log('raw'+data);
+        console.log('countries'+ this.countries);
     });
     
   }
