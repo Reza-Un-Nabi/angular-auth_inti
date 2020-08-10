@@ -17,10 +17,10 @@ export class HttpService {
         })
     };
     // AWS URL
-    URL = 'http://13.239.3.46:8085/api';
+    //URL = 'http://13.239.3.46:8085/api';
 
     //Local url
-    // URL = 'http://localhost:8085/api';
+     URL = 'http://localhost:8085/api';
 
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 

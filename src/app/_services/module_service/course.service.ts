@@ -7,7 +7,10 @@ import { Course } from '../../models/course';
 })
 export class CourseService {
 addhUrl = '/course/add';
+getByIdUrl = '/course/get';
 getAllUrl = '/course/get/allCourse';
+updateCourseUrl = '/course/update';
+
 
    constructor(
           private httpService: HttpService
@@ -18,5 +21,11 @@ getAllUrl = '/course/get/allCourse';
    }
    public getAllCourse() {
            return this.httpService.getWithToken(this.getAllUrl);
+   }
+    public getCourseById(id: number) {
+           return this.httpService.getWithToken(this.getByIdUrl+'/'+id);
+   }
+    public updateCourse(course: Course) {
+          return this.httpService.postWithToken(this.updateCourseUrl,course);
    }
 }
