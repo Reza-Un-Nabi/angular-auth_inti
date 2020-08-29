@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row style="height: 20px;">
     <button mat-icon-button>
-      <mat-icon (click)="sidenav.toggle()" *ngIf="showAdminMenu || showStudentMenu|| showSuperAdminMenu">menu</mat-icon>
+      <mat-icon (click)="sidenav.toggle()" *ngIf="showAdminMenu || showSuperAdminMenu">menu</mat-icon>
     </button>
-    <h1>SimpleCRM</h1>
+    <h1>Invoice Tracking</h1>
      <!-- this span for spaceing reight of org -->
      <span class="organization-spacer"></span>
      <span flex></span>
@@ -35,7 +35,7 @@
   </mat-toolbar-row>
 
   <mat-toolbar-row style="height: 20px;">
-    <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
+    <span style="font-size: 12px;">helps you easily manage your contacts</span>
   </mat-toolbar-row>
 </mat-toolbar>
 
@@ -44,82 +44,8 @@
 
     <mat-nav-list>
       <a mat-list-item [routerLink]="'/dashboard'" *ngIf="showAdminMenu"> Dashboard </a>
-      <a mat-list-item [routerLink]="'/calender'" *ngIf="showAdminMenu"> Calender </a>
+      
 
-      <!-- Leads Collaps -->
-      <a mat-list-item (click)="toggleLeadsCollapsed()" *ngIf="showAdminMenu"> Leads Manager </a>
-      <div class="div-background" *ngIf="!isLeadscollapsed">
-        <a mat-list-item [routerLink]="'/add-lead'"> Add Leads </a>
-        <a mat-list-item [routerLink]="'/leadview'"> View Leads </a>
-        <a mat-list-item [routerLink]="'/lead-view-import'"> Import Leads</a>
-        <a mat-list-item [routerLink]="'/studentTracher'"> Lead Tracker </a>
-        <a mat-list-item [routerLink]="'/studentDashboard'"> Lead Dashboard </a>
-        <a mat-list-item [routerLink]="'/studentDashboard'"> Today Calls </a>
-      </div>
-
-      <!-- Student Collaps -->
-      <a mat-list-item (click)="toggleCollapsed()" *ngIf="showStudentMenu"> Student Manager </a>
-      <div class="div-background" *ngIf="!iscollapsed">
-        <a mat-list-item [routerLink]="'/student'"> Add Student </a>
-        <a mat-list-item [routerLink]="'/viewStudent'"> View Student </a>
-        <a mat-list-item [routerLink]="'/studentTracher'"> Student Tracker</a>
-        <a mat-list-item [routerLink]="'/studentDashboard'"> View Dashboard </a>
-      </div>
-
-      <!-- Application Manager Collaps -->
-      <a mat-list-item (click)="toggleApplicationCollapsed()" *ngIf="showApplicationMenu"> Application Manager </a>
-      <div class="div-background" *ngIf="!isApplicationCollapsed">
-        <a mat-list-item [routerLink]="'/addApplication'"> Add Application </a>
-        <a mat-list-item [routerLink]="'/viewApplication'"> View Application </a>
-        <a mat-list-item [routerLink]="'/trackerApplication'"> Application Tracker</a>
-        <a mat-list-item [routerLink]="'/dashboardApplication'"> Application Dashboard </a>
-        <a mat-list-item [routerLink]="'/clientApplication'"> No Application Client </a>
-      </div>
-
-
-      <!-- Visa Manager Collaps -->
-      <a mat-list-item (click)="toggleVisaManagerCollapsed()" *ngIf="showVisaMenu"> Visa Manager </a>
-      <div class="div-background" *ngIf="!isVisaManagerCollapsed">
-        <a mat-list-item [routerLink]="'/addVisa'"> Add Visa </a>
-
-      </div>
-
-
-      <!-- Accounts Collaps -->
-      <a mat-list-item (click)="toggleAccountCollapsed()" *ngIf="showAccountMenu"> Accounts </a>
-      <div class="div-background" *ngIf="!isAccountCollapsed">
-        <a mat-list-item [routerLink]="'/studentInvoices'">Student Invoices</a>
-        <a mat-list-item [routerLink]="'/universityInvoices'">University Invoices</a>
-        <a mat-list-item [routerLink]="'/agentnvoices'">Agent Invoices</a>
-        <a mat-list-item [routerLink]="'/visaInvoices'">Visa Invoices</a>
-        <a mat-list-item [routerLink]="'/payment'">Payments</a>
-      </div>
-
-      <!-- University Collaps -->
-      <a mat-list-item (click)="toggleUniversityCollapsed()" *ngIf="showAdminMenu"> Univesity </a>
-      <div class="div-background" *ngIf="!isUniversityCollapsed">
-        <a mat-list-item [routerLink]="'/addUniversity'">Add University</a>
-        <a mat-list-item [routerLink]="'/viewUniversity'">View University </a>
-        <a mat-list-item [routerLink]="'/bulkUploadUniversity'">Bulk Upload</a>
-      </div>
-
-      <a mat-list-item [routerLink]="'/create-contact'" *ngIf="showAdminMenu"> Patners </a>
-      <a mat-list-item [routerLink]="'/create-activity'" *ngIf="showAdminMenu"> Againts </a>
-      <a mat-list-item [routerLink]="'/create-activity'" *ngIf="showAdminMenu"> Users </a>
-
-      <!-- Admin -->
-      <a mat-list-item (click)="toggleAdminCollapsed()" *ngIf="showAdminMenu"> Admin </a>
-      <div class="div-background" *ngIf="!isAdminCollapsed">
-        <a mat-list-item [routerLink]="'/addCountry'">Add Country</a>
-        <a mat-list-item [routerLink]="'/addCourse'">Add Course</a>
-        <a mat-list-item [routerLink]="'/addSource'">Add Source</a>
-        <a mat-list-item [routerLink]="'/addBranch'">Add Branch</a>
-       <!--  <a mat-list-item [routerLink]="'/addPermission'">Permission</a> -->
-        <a mat-list-item [routerLink]="'/addCheckList'">Check List</a>
-        <a mat-list-item [routerLink]="'/addSmsTemplate'">SMS Template</a>
-        <a mat-list-item [routerLink]="'/addEmailTemplate'">Email Template</a>
-
-      </div>
       <a mat-list-item (click)="toggleSuperAdminCollapsed()" *ngIf="showSuperAdminMenu"> Super Admin </a>
       <div class="div-background" *ngIf="!isSuperAdminCollapsed">
         <a mat-list-item [routerLink]="'/organization'">Organization</a>

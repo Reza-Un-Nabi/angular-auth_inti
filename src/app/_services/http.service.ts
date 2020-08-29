@@ -16,11 +16,10 @@ export class HttpService {
 
         })
     };
-    // AWS URL
-    URL = 'http://13.239.3.46:8085/api';
+
 
     //Local url
-   //URL = 'http://localhost:8085/api';
+    URL = 'http://localhost:8087/api';
 
     constructor(private http: HttpClient, private tokenStoreService: TokenStorageService) { }
 
@@ -35,7 +34,7 @@ export class HttpService {
     }
 
     deleteWithToken(url: any): Observable<any> {
-        return this.http.delete(this.URL + url,this.httpBearerHeader);
+        return this.http.delete(this.URL + url, this.httpBearerHeader);
     }
 
     get(url: any): Observable<any> {

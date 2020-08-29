@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 /* Local URL */
-//const AUTH_API = 'http://localhost:8085/api/auth/';
-/* Cloud URL */
-const AUTH_API = 'http://13.239.3.46:8085/api/auth/';
+const AUTH_API = 'http://localhost:8087/api/auth/';
+
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,13 +13,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
 
   constructor(private http: HttpClient) { }
 
   login(credentials): Observable<any> {
     return this.http.post(AUTH_API + 'signin', {
-      username: credentials.username,
+      userName: credentials.userName,
       password: credentials.password
     }, httpOptions);
   }
